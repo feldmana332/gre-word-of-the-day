@@ -166,6 +166,101 @@
   .modal-actions .btn-primary { background: var(--accent); color: white; }
   footer { color: var(--muted); font-size: 12px; text-align: center; padding: 24px 8px; }
   code { background: #f0f3f6; padding: 2px 6px; border-radius: 4px; font-family: ui-monospace, Menlo, monospace; font-size: 13px; }
+
+  /* Recipients card */
+  .recipients-loading { color: var(--muted); font-size: 14px; padding: 8px 0; }
+  ul.recipients { list-style: none; padding: 0; margin: 0 0 12px; }
+  ul.recipients li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #f6f8fa;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 14px;
+  }
+  ul.recipients li .email-text { overflow-wrap: anywhere; }
+  ul.recipients li button.remove {
+    background: transparent;
+    color: var(--error);
+    border: 0;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 6px;
+    flex-shrink: 0;
+  }
+  ul.recipients li button.remove:hover { color: #a01724; }
+  .add-row { display: flex; gap: 8px; margin-bottom: 12px; }
+  .add-row input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+  }
+  .add-row button {
+    padding: 0 18px;
+    background: var(--accent);
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .add-row button:disabled { background: #b1c5e8; cursor: not-allowed; }
+  .save-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding-top: 6px;
+  }
+  .save-row .dirty-note { font-size: 13px; color: var(--warn); }
+  .save-row button.save {
+    padding: 10px 18px;
+    background: var(--success);
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .save-row button.save:disabled { background: #b8d8c1; cursor: not-allowed; }
+  .save-row button.discard {
+    background: transparent;
+    color: var(--muted);
+    border: 0;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+    padding: 6px 8px;
+  }
+  .recipients-locked {
+    background: #fff8c5;
+    border-left: 3px solid var(--warn);
+    border-radius: 4px;
+    padding: 12px;
+    color: #7a5c00;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+  .recipients-locked button {
+    background: transparent;
+    border: 0;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+  }
 </style>
 </head>
 <body>
@@ -193,6 +288,32 @@
     </div>
   </section>
 
+  <section class="card" id="recipients-card">
+    <h2>Recipients</h2>
+    <p style="color:var(--muted);font-size:14px;margin:0 0 12px;">
+      People who get the daily word. Changes save directly to <code>config.json</code> on GitHub.
+    </p>
+    <div id="recipients-loading" class="recipients-loading">Loading current list&hellip;</div>
+    <ul id="recipients-list" class="recipients" hidden></ul>
+    <div id="recipients-edit" hidden>
+      <div class="add-row">
+        <input id="new-email" type="email" placeholder="someone@example.com" autocomplete="email" />
+        <button id="add-email-btn">Add</button>
+      </div>
+      <div class="save-row">
+        <span id="dirty-note" class="dirty-note"></span>
+        <div>
+          <button id="discard-btn" class="discard" hidden>Discard changes</button>
+          <button id="save-btn" class="save" disabled>Save changes</button>
+        </div>
+      </div>
+    </div>
+    <div id="recipients-locked" class="recipients-locked" hidden>
+      Read-only view. <button id="recipients-setup-link">Set up access token</button> to edit the list from this device.
+    </div>
+    <div id="recipients-status" class="status" role="status" aria-live="polite"></div>
+  </section>
+
   <section class="card">
     <h2>Recent Runs &amp; Logs</h2>
     <ul class="links">
@@ -202,9 +323,9 @@
   </section>
 
   <section class="card">
-    <h2>Edit Settings</h2>
+    <h2>Other Settings</h2>
     <ul class="links">
-      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/edit/main/config.json" target="_blank" rel="noopener">Edit recipients, default word count &amp; send time</a></li>
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/edit/main/config.json" target="_blank" rel="noopener">Default word count &amp; send time (config.json)</a></li>
       <li><a href="https://github.com/feldmana332/gre-word-of-the-day/edit/main/words.txt" target="_blank" rel="noopener">Edit word list</a></li>
       <li><a href="https://github.com/feldmana332/gre-word-of-the-day/settings/secrets/actions" target="_blank" rel="noopener">Edit Gmail credentials (secrets)</a></li>
     </ul>
@@ -393,7 +514,220 @@
     m.addEventListener("click", (e) => { if (e.target === m) m.classList.remove("show"); });
   });
 
+  // ===========================================================================
+  // RECIPIENTS MANAGEMENT
+  // ---------------------------------------------------------------------------
+  // The "read-modify-write" pattern using the GitHub Contents API.
+  //   1. GET /repos/{owner}/{repo}/contents/config.json
+  //        -> returns { content: <base64>, sha: <version-hash>, ... }
+  //   2. We decode, mutate the recipients array in JS, re-encode.
+  //   3. PUT /repos/{owner}/{repo}/contents/config.json with the new content
+  //      AND the sha we got in step 1. If the file changed since our read,
+  //      GitHub rejects the write (409 Conflict) and we re-load to retry.
+  // ===========================================================================
+  const CONFIG_PATH = "config.json";
+  const CONTENTS_URL = `https://api.github.com/repos/${REPO}/contents/${CONFIG_PATH}`;
+
+  // State held in memory: the parsed config object, plus the sha + original
+  // recipients so we can detect "unsaved changes" (dirty state).
+  const recipState = {
+    config: null,      // full parsed config.json object
+    sha: null,         // sha of the last-loaded version
+    originalEmails: [],// snapshot to compare against for dirty detection
+    emails: [],        // current working list
+  };
+
+  const rcCard = $("recipients-card");
+  const rcLoading = $("recipients-loading");
+  const rcList = $("recipients-list");
+  const rcEdit = $("recipients-edit");
+  const rcLocked = $("recipients-locked");
+  const rcStatus = $("recipients-status");
+  const newEmailInput = $("new-email");
+  const addBtn = $("add-email-btn");
+  const saveBtn = $("save-btn");
+  const discardBtn = $("discard-btn");
+  const dirtyNote = $("dirty-note");
+
+  function rcShowStatus(msg, kind) {
+    rcStatus.innerHTML = msg;
+    rcStatus.className = "status show " + kind;
+  }
+  function rcHideStatus() { rcStatus.className = "status"; rcStatus.innerHTML = ""; }
+
+  // Encode/decode UTF-8 to/from base64 — needed because GitHub's API uses base64
+  // and JS's built-in atob/btoa only handles Latin-1, so we go through Uint8Array.
+  function b64encode(str) {
+    const bytes = new TextEncoder().encode(str);
+    let bin = "";
+    bytes.forEach((b) => { bin += String.fromCharCode(b); });
+    return btoa(bin);
+  }
+  function b64decode(b64) {
+    const bin = atob(b64.replace(/\s/g, ""));
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new TextDecoder().decode(bytes);
+  }
+
+  // Loose but practical email check — good enough to catch typos like missing @.
+  function isLikelyEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
+
+  // Re-render the recipient list and the save/discard controls from state.
+  function rcRender() {
+    rcList.innerHTML = "";
+    recipState.emails.forEach((email, idx) => {
+      const li = document.createElement("li");
+      const span = document.createElement("span");
+      span.className = "email-text";
+      span.textContent = email;
+      const btn = document.createElement("button");
+      btn.className = "remove";
+      btn.title = "Remove " + email;
+      btn.setAttribute("aria-label", "Remove " + email);
+      btn.textContent = "×";
+      btn.addEventListener("click", () => {
+        recipState.emails.splice(idx, 1);
+        rcRender();
+      });
+      // Lock the controls when read-only.
+      if (!getToken()) btn.disabled = true;
+      li.append(span, btn);
+      rcList.append(li);
+    });
+    rcList.hidden = recipState.emails.length === 0;
+
+    const dirty = !arraysEqual(recipState.emails, recipState.originalEmails);
+    saveBtn.disabled = !dirty || !getToken();
+    discardBtn.hidden = !dirty;
+    dirtyNote.textContent = dirty ? "Unsaved changes" : "";
+  }
+
+  function arraysEqual(a, b) {
+    if (a.length !== b.length) return false;
+    for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+    return true;
+  }
+
+  // Fetch the current config.json. Uses the token if available (for higher
+  // rate limits and to ensure we see fresh content), otherwise unauthenticated
+  // (which works for public repos but counts against a per-IP hourly cap).
+  async function rcLoad() {
+    rcLoading.hidden = false;
+    rcList.hidden = true;
+    rcEdit.hidden = true;
+    rcLocked.hidden = true;
+    rcHideStatus();
+    try {
+      const headers = { "Accept": "application/vnd.github+json" };
+      const token = getToken();
+      if (token) headers["Authorization"] = `Bearer ${token}`;
+      const resp = await fetch(CONTENTS_URL + "?ref=" + REF, { headers });
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const data = await resp.json();
+      const text = b64decode(data.content);
+      recipState.config = JSON.parse(text);
+      recipState.sha = data.sha;
+      recipState.originalEmails = (recipState.config.recipients || []).slice();
+      recipState.emails = recipState.originalEmails.slice();
+      rcLoading.hidden = true;
+      rcRender();
+      if (getToken()) {
+        rcEdit.hidden = false;
+      } else {
+        rcLocked.hidden = false;
+      }
+    } catch (err) {
+      rcLoading.textContent = "Couldn't load recipients: " + err.message;
+    }
+  }
+
+  // Commit the new recipients back to config.json.
+  async function rcSave() {
+    const token = getToken();
+    if (!token) { openSetup(); return; }
+    if (recipState.emails.length === 0) {
+      if (!confirm("Save with an empty recipient list? No one will receive emails.")) return;
+    }
+    saveBtn.disabled = true;
+    rcShowStatus("Saving&hellip;", "info");
+
+    // Build the new config object: take whatever was loaded (preserving extra
+    // fields like default_word_count, timezone, etc.) and replace only recipients.
+    const newConfig = Object.assign({}, recipState.config, { recipients: recipState.emails });
+    const body = {
+      message: `Update recipients (${recipState.emails.length} now)`,
+      content: b64encode(JSON.stringify(newConfig, null, 2) + "\n"),
+      sha: recipState.sha,
+    };
+
+    try {
+      const resp = await fetch(CONTENTS_URL, {
+        method: "PUT",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Accept": "application/vnd.github+json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      if (resp.ok) {
+        rcShowStatus("Saved &#10003; &nbsp;The change is live in the repo.", "success");
+        await rcLoad();
+      } else if (resp.status === 409) {
+        rcShowStatus("Someone else changed config.json since you loaded the page. Reloading the latest version&hellip;", "warn");
+        await rcLoad();
+      } else if (resp.status === 401 || resp.status === 403) {
+        rcShowStatus(
+          `Token can't write (HTTP ${resp.status}). Confirm it has the <code>public_repo</code> scope.`,
+          "error"
+        );
+      } else {
+        const t = await resp.text();
+        rcShowStatus(`Save failed (HTTP ${resp.status}): ${t.slice(0, 200)}`, "error");
+      }
+    } catch (err) {
+      rcShowStatus(`Network error: ${err.message}`, "error");
+    } finally {
+      rcRender();
+    }
+  }
+
+  function rcTryAdd() {
+    const v = newEmailInput.value.trim();
+    if (!v) return;
+    if (!isLikelyEmail(v)) {
+      rcShowStatus("That doesn't look like a valid email address.", "error");
+      return;
+    }
+    if (recipState.emails.includes(v)) {
+      rcShowStatus(`${v} is already on the list.`, "warn");
+      return;
+    }
+    recipState.emails.push(v);
+    newEmailInput.value = "";
+    rcHideStatus();
+    rcRender();
+  }
+
+  addBtn.addEventListener("click", rcTryAdd);
+  newEmailInput.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); rcTryAdd(); } });
+  saveBtn.addEventListener("click", rcSave);
+  discardBtn.addEventListener("click", () => {
+    recipState.emails = recipState.originalEmails.slice();
+    rcHideStatus();
+    rcRender();
+  });
+  $("recipients-setup-link").addEventListener("click", openSetup);
+
+  // When the user finishes the token setup flow, the recipient card needs to
+  // switch from locked (read-only) to unlocked. Wrap the existing setup-save
+  // handler to also refresh the recipients view.
+  const originalSetupSave = $("setup-save").onclick;
+  $("setup-save").addEventListener("click", () => { rcLoad(); });
+
   refreshTokenState();
+  rcLoad();
 })();
 </script>
 </body>
