@@ -672,8 +672,20 @@
         body: JSON.stringify(body),
       });
       if (resp.ok) {
-        rcShowStatus("Saved &#10003; &nbsp;The change is live in the repo.", "success");
-        await rcLoad();
+        // GitHub's CDN can briefly serve a stale copy of config.json right after
+        // a write, so we DON'T re-fetch. Instead, we trust what we just sent
+        // and update local state from the PUT response (which gives us the new
+        // sha to use for the next edit). This is the canonical way to do
+        // optimistic UI after a successful write.
+        const result = await resp.json();
+        recipState.config = newConfig;
+        recipState.sha = result.content.sha;
+        recipState.originalEmails = recipState.emails.slice();
+        rcShowStatus(
+          `Saved &#10003; &nbsp;Now ${recipState.emails.length} recipient${recipState.emails.length === 1 ? "" : "s"}.`,
+          "success"
+        );
+        rcRender();
       } else if (resp.status === 409) {
         rcShowStatus("Someone else changed config.json since you loaded the page. Reloading the latest version&hellip;", "warn");
         await rcLoad();
