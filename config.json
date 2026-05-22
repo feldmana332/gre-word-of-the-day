@@ -1,10 +1,8 @@
 {
-  "recipients": [
-    "af1@me.com",
-    "alanfeld@upenn.edu"
-  ],
+  "recipients": [],
   "default_word_count": 1,
   "send_hour_local": 6,
   "timezone": "America/New_York",
-  "recent_window_days": 30
+  "recent_window_days": 30,
+  "_recipients_note": "Recipients are configured via the RECIPIENTS GitHub Actions secret (comma-separated emails) so this file can live in a public repo without leaking addresses. Edit at: Settings -> Secrets and variables -> Actions."
 }

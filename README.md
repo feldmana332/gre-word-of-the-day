@@ -24,13 +24,13 @@ count, the morning send hour, and the no-repeat window. Edit it directly on
 github.com (pencil icon), commit the change on the main branch, and the next run
 picks it up. No code changes required.
 
-The Gmail sender address and app password live in repository **Secrets**
+Sensitive values live in repository **Secrets**
 (Settings &rarr; Secrets and variables &rarr; Actions):
 
 - `GMAIL_SENDER` — the Gmail address used as the From: line
 - `GMAIL_APP_PASSWORD` — a Gmail app password (16 chars, spaces optional)
-- `RECIPIENTS` (optional) — comma-separated emails; overrides `config.json`
-  recipients without committing a change. Leave unset to use `config.json`.
+- `RECIPIENTS` — comma-separated email addresses (the people who get the
+  daily word). Kept in secrets so the public repo doesn't leak addresses.
 
 ## Manual trigger (any device)
 
