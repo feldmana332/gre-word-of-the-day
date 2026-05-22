@@ -1,5 +1,7 @@
 # GRE Word of the Day
 
+[![Tests](https://github.com/feldmana332/gre-word-of-the-day/actions/workflows/tests.yml/badge.svg)](https://github.com/feldmana332/gre-word-of-the-day/actions/workflows/tests.yml)
+
 Sends a GRE-level vocabulary word (or a few) to a list of email recipients every
 morning at 6 AM US Eastern, with definitions and a link back to Merriam-Webster.
 Runs entirely on GitHub Actions — no machine of yours needs to be on.
@@ -57,6 +59,17 @@ GMAIL_SENDER='you@gmail.com' GMAIL_APP_PASSWORD='abcd efgh ijkl mnop' \
 ```
 
 Add `--dry-run` to see the rendered email without sending it.
+
+## Running the test suite
+
+```bash
+pip install -r requirements.txt -r requirements-dev.txt
+pytest -v
+```
+
+Tests run automatically on every push and PR via
+[`.github/workflows/tests.yml`](.github/workflows/tests.yml). The badge at the
+top of this README reflects the latest run status.
 
 ## Word lists
 
