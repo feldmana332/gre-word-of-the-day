@@ -1,0 +1,65 @@
+name: Word of the Day
+
+on:
+  schedule:
+    # 6:00 AM America/New_York handles DST automatically by firing at both
+    # 10:00 UTC (= 6 AM EDT, summer) and 11:00 UTC (= 6 AM EST, winter).
+    # The script checks the current ET hour and only sends on the matching run.
+    - cron: "0 10,11 * * *"
+  workflow_dispatch:
+    inputs:
+      word_count:
+        description: "How many words to send (1-5). Leave blank to use config default."
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: word-of-the-day
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Send word(s) of the day
+        env:
+          GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENTS: ${{ secrets.RECIPIENTS }}
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            python word_of_the_day.py --trigger scheduled
+          else
+            COUNT="${{ inputs.word_count }}"
+            if [ -n "$COUNT" ]; then
+              python word_of_the_day.py --trigger manual --count "$COUNT"
+            else
+              python word_of_the_day.py --trigger manual
+            fi
+          fi
+
+      - name: Commit updated state
+        run: |
+          if git diff --quiet --exit-code state.json 2>/dev/null; then
+            echo "No state changes to commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add state.json
+            git commit -m "Update word-of-the-day state"
+            git push
+          fi

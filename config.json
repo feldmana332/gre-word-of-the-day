@@ -1,0 +1,10 @@
+{
+  "recipients": [
+    "af1@me.com",
+    "alanfeld@upenn.edu"
+  ],
+  "default_word_count": 1,
+  "send_hour_local": 6,
+  "timezone": "America/New_York",
+  "recent_window_days": 30
+}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#1a2a44" />
+<title>GRE Word of the Day &middot; Control Panel</title>
+<style>
+  :root {
+    --bg: #f6f8fa;
+    --card: #ffffff;
+    --ink: #1a2a44;
+    --muted: #5a6678;
+    --accent: #1a73e8;
+    --border: #e1e4e8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    padding: 16px;
+  }
+  .wrap { max-width: 600px; margin: 0 auto; }
+  header { padding: 24px 8px 8px; }
+  h1 {
+    font-family: Georgia, serif;
+    margin: 0;
+    font-size: 28px;
+    color: var(--ink);
+  }
+  .sub { color: var(--muted); margin-top: 4px; font-size: 14px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+  }
+  .card h2 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+  }
+  .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  a.btn {
+    flex: 1 1 0;
+    min-width: 110px;
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  a.btn.secondary {
+    background: var(--card);
+    color: var(--ink);
+    border: 1px solid var(--border);
+  }
+  a.btn:hover { opacity: 0.92; }
+  ul.links { list-style: none; padding: 0; margin: 0; }
+  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); }
+  ul.links li:last-child { border-bottom: 0; }
+  ul.links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ul.links a:after { content: "›"; color: var(--muted); }
+  .note { color: var(--muted); font-size: 13px; margin-top: 8px; }
+  footer { color: var(--muted); font-size: 12px; text-align: center; padding: 24px 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>GRE Word of the Day</h1>
+    <div class="sub">Control panel &middot; tap a button on any device</div>
+  </header>
+
+  <section class="card">
+    <h2>Send Now</h2>
+    <p class="note">Opens the GitHub Actions "Run workflow" form. Set word count (1-5) and tap Run.</p>
+    <div class="btn-row">
+      <a class="btn" href="https://github.com/feldmana332/gre-word-of-the-day/actions/workflows/daily.yml">Run workflow</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Recent Runs &amp; Logs</h2>
+    <ul class="links">
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/actions/workflows/daily.yml">View recent workflow runs</a></li>
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/blob/main/state.json">View sent-history (state.json)</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Edit Settings</h2>
+    <ul class="links">
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/edit/main/config.json">Edit recipients &amp; default count</a></li>
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/edit/main/words.txt">Edit word list</a></li>
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/settings/secrets/actions">Edit Gmail credentials (secrets)</a></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Help</h2>
+    <ul class="links">
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/blob/main/README.md">Read the README</a></li>
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day">Browse repo</a></li>
+    </ul>
+  </section>
+
+  <footer>Powered by GitHub Actions. Free for personal use.</footer>
+</div>
+</body>
+</html>
