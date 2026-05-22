@@ -187,16 +187,18 @@ def send_email(
     html_body: str,
     text_body: str,
 ) -> None:
-    msg = EmailMessage()
-    msg["From"] = sender
-    msg["To"] = ", ".join(recipients)
-    msg["Subject"] = subject
-    msg.set_content(text_body)
-    msg.add_alternative(html_body, subtype="html")
+    """Send one email per recipient (better deliverability than a single multi-To message)."""
     with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
         smtp.starttls()
         smtp.login(sender, password.replace(" ", ""))
-        smtp.send_message(msg)
+        for recipient in recipients:
+            msg = EmailMessage()
+            msg["From"] = sender
+            msg["To"] = recipient
+            msg["Subject"] = subject
+            msg.set_content(text_body)
+            msg.add_alternative(html_body, subtype="html")
+            smtp.send_message(msg)
 
 
 def build_subject(words: list[str]) -> str:
