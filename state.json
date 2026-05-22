@@ -87,7 +87,30 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-05-22",
+      "words": [
+        "impugn",
+        "vidame"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-05-22"
+  "last_sent_date": "2026-05-22",
+  "examples": {
+    "impugn": {
+      "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-22T21:58:10.083385+00:00"
+    },
+    "vidame": {
+      "sentence": "The vidame of Chartres held considerable authority over the cathedral's vast lands and answered directly to the bishop himself.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-22T21:58:11.185053+00:00"
+    }
+  }
 }
