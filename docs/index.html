@@ -169,7 +169,30 @@
 
   /* Recipients card */
   .recipients-loading { color: var(--muted); font-size: 14px; padding: 8px 0; }
-  ul.recipients { list-style: none; padding: 0; margin: 0 0 12px; }
+  .recipients-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .recipients-summary .count strong { color: var(--ink); font-size: 15px; }
+  .recipients-summary .pending-count {
+    background: #fff8c5;
+    color: #7a5c00;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  .recipients-summary .pending-count.zero { display: none; }
+  .recipients-scroll {
+    max-height: 320px;
+    overflow-y: auto;
+    margin: 0 -4px 12px;
+    padding: 0 4px;
+  }
+  ul.recipients { list-style: none; padding: 0; margin: 0; }
   ul.recipients li {
     display: flex;
     align-items: center;
@@ -182,19 +205,66 @@
     margin-bottom: 6px;
     font-family: ui-monospace, Menlo, monospace;
     font-size: 14px;
+    transition: background 0.15s, border-color 0.15s, opacity 0.15s;
   }
-  ul.recipients li .email-text { overflow-wrap: anywhere; }
-  ul.recipients li button.remove {
-    background: transparent;
-    color: var(--error);
-    border: 0;
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    padding: 0 6px;
+  ul.recipients li .email-text { overflow-wrap: anywhere; flex: 1; }
+  ul.recipients li .badge {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 10px;
     flex-shrink: 0;
+    margin-right: 4px;
   }
-  ul.recipients li button.remove:hover { color: #a01724; }
+  /* Pending addition: green tint, NEW badge */
+  ul.recipients li.adding {
+    background: #dafbe1;
+    border-color: #b6e0c2;
+  }
+  ul.recipients li.adding .badge {
+    background: var(--success);
+    color: white;
+  }
+  /* Pending removal: red tint, strikethrough, restore action */
+  ul.recipients li.removing {
+    background: #ffebe9;
+    border-color: #ffc5c1;
+    opacity: 0.78;
+  }
+  ul.recipients li.removing .email-text { text-decoration: line-through; color: #6e7681; }
+  ul.recipients li.removing .badge {
+    background: var(--error);
+    color: white;
+  }
+  ul.recipients li button.row-action {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 4px 8px;
+    flex-shrink: 0;
+    font-weight: 600;
+    border-radius: 6px;
+  }
+  ul.recipients li button.row-action.remove { color: var(--error); font-size: 22px; line-height: 1; }
+  ul.recipients li button.row-action.remove:hover { color: #a01724; background: #ffebe9; }
+  ul.recipients li button.row-action.restore {
+    color: var(--accent);
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  ul.recipients li button.row-action.restore:hover { background: #eaf2ff; }
+  .empty-list {
+    text-align: center;
+    color: var(--muted);
+    padding: 24px 12px;
+    background: #f6f8fa;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+  }
   .add-row { display: flex; gap: 8px; margin-bottom: 12px; }
   .add-row input {
     flex: 1;
@@ -291,25 +361,34 @@
   <section class="card" id="recipients-card">
     <h2>Recipients</h2>
     <p style="color:var(--muted);font-size:14px;margin:0 0 12px;">
-      People who get the daily word. Changes save directly to <code>config.json</code> on GitHub.
+      Everyone who gets the daily word. Edits show up below as pending; click <strong>Save changes</strong> to commit them to <code>config.json</code>.
     </p>
     <div id="recipients-loading" class="recipients-loading">Loading current list&hellip;</div>
-    <ul id="recipients-list" class="recipients" hidden></ul>
-    <div id="recipients-edit" hidden>
-      <div class="add-row">
-        <input id="new-email" type="email" placeholder="someone@example.com" autocomplete="email" />
-        <button id="add-email-btn">Add</button>
+    <div id="recipients-body" hidden>
+      <div class="recipients-summary">
+        <span class="count"><strong id="effective-count">0</strong> recipient<span id="effective-plural">s</span> after saving</span>
+        <span id="pending-count" class="pending-count zero">0 pending</span>
       </div>
-      <div class="save-row">
-        <span id="dirty-note" class="dirty-note"></span>
-        <div>
-          <button id="discard-btn" class="discard" hidden>Discard changes</button>
-          <button id="save-btn" class="save" disabled>Save changes</button>
+      <div class="recipients-scroll">
+        <ul id="recipients-list" class="recipients"></ul>
+        <div id="empty-list" class="empty-list" hidden>No recipients yet. Add one below.</div>
+      </div>
+      <div id="recipients-edit" hidden>
+        <div class="add-row">
+          <input id="new-email" type="email" placeholder="someone@example.com" autocomplete="email" />
+          <button id="add-email-btn">Add</button>
+        </div>
+        <div class="save-row">
+          <span id="dirty-note" class="dirty-note"></span>
+          <div>
+            <button id="discard-btn" class="discard" hidden>Discard changes</button>
+            <button id="save-btn" class="save" disabled>Save changes</button>
+          </div>
         </div>
       </div>
-    </div>
-    <div id="recipients-locked" class="recipients-locked" hidden>
-      Read-only view. <button id="recipients-setup-link">Set up access token</button> to edit the list from this device.
+      <div id="recipients-locked" class="recipients-locked" hidden>
+        Read-only view. <button id="recipients-setup-link">Set up access token</button> to edit the list from this device.
+      </div>
     </div>
     <div id="recipients-status" class="status" role="status" aria-live="polite"></div>
   </section>
@@ -517,32 +596,45 @@
   // ===========================================================================
   // RECIPIENTS MANAGEMENT
   // ---------------------------------------------------------------------------
-  // The "read-modify-write" pattern using the GitHub Contents API.
+  // The list is built from three pieces of state, NOT a single mutable array:
+  //   originalEmails  — what's saved on GitHub (in the order it lives there)
+  //   pendingAdditions — emails the user wants to add (until they Save)
+  //   pendingRemovals  — Set of originalEmails the user wants to remove
+  // Effective ("what will be saved") = originalEmails minus removals, then additions.
+  //
+  // Why three pieces instead of one? Because the UI needs to render PENDING
+  // state explicitly — a removed-but-not-saved row stays visible (strikethrough)
+  // with an Undo button. A single mutable array can't tell you "this was here
+  // but is going away."
+  //
+  // The read-modify-write pattern with sha-based optimistic concurrency:
   //   1. GET /repos/{owner}/{repo}/contents/config.json
   //        -> returns { content: <base64>, sha: <version-hash>, ... }
-  //   2. We decode, mutate the recipients array in JS, re-encode.
-  //   3. PUT /repos/{owner}/{repo}/contents/config.json with the new content
-  //      AND the sha we got in step 1. If the file changed since our read,
-  //      GitHub rejects the write (409 Conflict) and we re-load to retry.
+  //   2. We decode, build a new effective list in JS, re-encode.
+  //   3. PUT same endpoint with new content + the original sha. GitHub uses
+  //      that sha to detect concurrent edits and rejects on conflict (409).
   // ===========================================================================
   const CONFIG_PATH = "config.json";
   const CONTENTS_URL = `https://api.github.com/repos/${REPO}/contents/${CONFIG_PATH}`;
 
-  // State held in memory: the parsed config object, plus the sha + original
-  // recipients so we can detect "unsaved changes" (dirty state).
   const recipState = {
-    config: null,      // full parsed config.json object
-    sha: null,         // sha of the last-loaded version
-    originalEmails: [],// snapshot to compare against for dirty detection
-    emails: [],        // current working list
+    config: null,                      // full parsed config.json
+    sha: null,                         // version hash for optimistic concurrency
+    originalEmails: [],                // what's currently saved on GitHub
+    pendingAdditions: [],              // newly-typed emails not yet committed
+    pendingRemovals: new Set(),        // saved emails the user has ×'d out
   };
 
-  const rcCard = $("recipients-card");
   const rcLoading = $("recipients-loading");
+  const rcBody = $("recipients-body");
   const rcList = $("recipients-list");
   const rcEdit = $("recipients-edit");
   const rcLocked = $("recipients-locked");
   const rcStatus = $("recipients-status");
+  const rcEmpty = $("empty-list");
+  const effCount = $("effective-count");
+  const effPlural = $("effective-plural");
+  const pendCount = $("pending-count");
   const newEmailInput = $("new-email");
   const addBtn = $("add-email-btn");
   const saveBtn = $("save-btn");
@@ -555,8 +647,7 @@
   }
   function rcHideStatus() { rcStatus.className = "status"; rcStatus.innerHTML = ""; }
 
-  // Encode/decode UTF-8 to/from base64 — needed because GitHub's API uses base64
-  // and JS's built-in atob/btoa only handles Latin-1, so we go through Uint8Array.
+  // UTF-8-safe base64 — JS's atob/btoa are Latin-1 only.
   function b64encode(str) {
     const bytes = new TextEncoder().encode(str);
     let bin = "";
@@ -569,52 +660,109 @@
     for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
     return new TextDecoder().decode(bytes);
   }
-
-  // Loose but practical email check — good enough to catch typos like missing @.
   function isLikelyEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
 
-  // Re-render the recipient list and the save/discard controls from state.
-  function rcRender() {
-    rcList.innerHTML = "";
-    recipState.emails.forEach((email, idx) => {
-      const li = document.createElement("li");
-      const span = document.createElement("span");
-      span.className = "email-text";
-      span.textContent = email;
-      const btn = document.createElement("button");
-      btn.className = "remove";
-      btn.title = "Remove " + email;
-      btn.setAttribute("aria-label", "Remove " + email);
-      btn.textContent = "×";
+  // The "effective" list — what would be saved right now if the user hit Save.
+  function effectiveEmails() {
+    const kept = recipState.originalEmails.filter((e) => !recipState.pendingRemovals.has(e));
+    return kept.concat(recipState.pendingAdditions);
+  }
+
+  function pendingChangeCount() {
+    return recipState.pendingRemovals.size + recipState.pendingAdditions.length;
+  }
+
+  function isDirty() { return pendingChangeCount() > 0; }
+
+  // Render one row of the list. `kind` is "saved", "adding", or "removing".
+  function makeRow(email, kind) {
+    const li = document.createElement("li");
+    if (kind === "adding") li.classList.add("adding");
+    if (kind === "removing") li.classList.add("removing");
+
+    if (kind === "adding") {
+      const badge = document.createElement("span");
+      badge.className = "badge";
+      badge.textContent = "new";
+      li.append(badge);
+    } else if (kind === "removing") {
+      const badge = document.createElement("span");
+      badge.className = "badge";
+      badge.textContent = "removing";
+      li.append(badge);
+    }
+
+    const span = document.createElement("span");
+    span.className = "email-text";
+    span.textContent = email;
+    li.append(span);
+
+    const btn = document.createElement("button");
+    btn.className = "row-action";
+    if (kind === "removing") {
+      // Pending removal — show an Undo button to restore.
+      btn.classList.add("restore");
+      btn.textContent = "Undo";
+      btn.title = "Cancel removal of " + email;
       btn.addEventListener("click", () => {
-        recipState.emails.splice(idx, 1);
+        recipState.pendingRemovals.delete(email);
         rcRender();
       });
-      // Lock the controls when read-only.
-      if (!getToken()) btn.disabled = true;
-      li.append(span, btn);
-      rcList.append(li);
-    });
-    rcList.hidden = recipState.emails.length === 0;
+    } else {
+      // Saved row OR pending addition — both show × that removes from view.
+      btn.classList.add("remove");
+      btn.textContent = "×";
+      btn.title = "Remove " + email;
+      btn.setAttribute("aria-label", "Remove " + email);
+      btn.addEventListener("click", () => {
+        if (kind === "saved") {
+          recipState.pendingRemovals.add(email);
+        } else {
+          // pending addition — just drop it from pendingAdditions
+          recipState.pendingAdditions = recipState.pendingAdditions.filter((e) => e !== email);
+        }
+        rcRender();
+      });
+    }
+    if (!getToken()) btn.disabled = true;
+    li.append(btn);
+    return li;
+  }
 
-    const dirty = !arraysEqual(recipState.emails, recipState.originalEmails);
+  function rcRender() {
+    rcList.innerHTML = "";
+
+    // Saved rows in original order; mark "removing" if pending-removal.
+    recipState.originalEmails.forEach((email) => {
+      const removing = recipState.pendingRemovals.has(email);
+      rcList.append(makeRow(email, removing ? "removing" : "saved"));
+    });
+    // Pending additions appended at the end.
+    recipState.pendingAdditions.forEach((email) => {
+      rcList.append(makeRow(email, "adding"));
+    });
+
+    const eff = effectiveEmails();
+    effCount.textContent = String(eff.length);
+    effPlural.textContent = eff.length === 1 ? "" : "s";
+
+    const pending = pendingChangeCount();
+    pendCount.textContent = `${pending} pending`;
+    pendCount.classList.toggle("zero", pending === 0);
+
+    rcEmpty.hidden = recipState.originalEmails.length + recipState.pendingAdditions.length > 0;
+
+    const dirty = isDirty();
     saveBtn.disabled = !dirty || !getToken();
     discardBtn.hidden = !dirty;
-    dirtyNote.textContent = dirty ? "Unsaved changes" : "";
+    dirtyNote.textContent = dirty
+      ? (pending === 1 ? "1 unsaved change" : `${pending} unsaved changes`)
+      : "";
   }
 
-  function arraysEqual(a, b) {
-    if (a.length !== b.length) return false;
-    for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
-    return true;
-  }
-
-  // Fetch the current config.json. Uses the token if available (for higher
-  // rate limits and to ensure we see fresh content), otherwise unauthenticated
-  // (which works for public repos but counts against a per-IP hourly cap).
   async function rcLoad() {
     rcLoading.hidden = false;
-    rcList.hidden = true;
+    rcBody.hidden = true;
     rcEdit.hidden = true;
     rcLocked.hidden = true;
     rcHideStatus();
@@ -629,34 +777,31 @@
       recipState.config = JSON.parse(text);
       recipState.sha = data.sha;
       recipState.originalEmails = (recipState.config.recipients || []).slice();
-      recipState.emails = recipState.originalEmails.slice();
+      recipState.pendingAdditions = [];
+      recipState.pendingRemovals = new Set();
       rcLoading.hidden = true;
+      rcBody.hidden = false;
       rcRender();
-      if (getToken()) {
-        rcEdit.hidden = false;
-      } else {
-        rcLocked.hidden = false;
-      }
+      if (getToken()) { rcEdit.hidden = false; } else { rcLocked.hidden = false; }
     } catch (err) {
       rcLoading.textContent = "Couldn't load recipients: " + err.message;
     }
   }
 
-  // Commit the new recipients back to config.json.
   async function rcSave() {
     const token = getToken();
     if (!token) { openSetup(); return; }
-    if (recipState.emails.length === 0) {
+    const eff = effectiveEmails();
+    if (eff.length === 0) {
       if (!confirm("Save with an empty recipient list? No one will receive emails.")) return;
     }
     saveBtn.disabled = true;
     rcShowStatus("Saving&hellip;", "info");
 
-    // Build the new config object: take whatever was loaded (preserving extra
-    // fields like default_word_count, timezone, etc.) and replace only recipients.
-    const newConfig = Object.assign({}, recipState.config, { recipients: recipState.emails });
+    // Preserve every other field in config.json — only replace recipients.
+    const newConfig = Object.assign({}, recipState.config, { recipients: eff });
     const body = {
-      message: `Update recipients (${recipState.emails.length} now)`,
+      message: `Update recipients (${eff.length} now)`,
       content: b64encode(JSON.stringify(newConfig, null, 2) + "\n"),
       sha: recipState.sha,
     };
@@ -672,17 +817,17 @@
         body: JSON.stringify(body),
       });
       if (resp.ok) {
-        // GitHub's CDN can briefly serve a stale copy of config.json right after
-        // a write, so we DON'T re-fetch. Instead, we trust what we just sent
-        // and update local state from the PUT response (which gives us the new
-        // sha to use for the next edit). This is the canonical way to do
-        // optimistic UI after a successful write.
+        // Optimistic UI: don't re-fetch (GitHub's CDN may serve stale data
+        // for a few seconds after a write). Use the PUT response to update
+        // local state from what we KNOW we just committed.
         const result = await resp.json();
         recipState.config = newConfig;
         recipState.sha = result.content.sha;
-        recipState.originalEmails = recipState.emails.slice();
+        recipState.originalEmails = eff.slice();
+        recipState.pendingAdditions = [];
+        recipState.pendingRemovals = new Set();
         rcShowStatus(
-          `Saved &#10003; &nbsp;Now ${recipState.emails.length} recipient${recipState.emails.length === 1 ? "" : "s"}.`,
+          `Saved &#10003; &nbsp;Now ${eff.length} recipient${eff.length === 1 ? "" : "s"}.`,
           "success"
         );
         rcRender();
@@ -712,11 +857,20 @@
       rcShowStatus("That doesn't look like a valid email address.", "error");
       return;
     }
-    if (recipState.emails.includes(v)) {
+    // If they removed-then-added the same email, treat it as cancelling the
+    // removal — no need to create a "pending addition" duplicate.
+    if (recipState.pendingRemovals.has(v)) {
+      recipState.pendingRemovals.delete(v);
+      newEmailInput.value = "";
+      rcHideStatus();
+      rcRender();
+      return;
+    }
+    if (recipState.originalEmails.includes(v) || recipState.pendingAdditions.includes(v)) {
       rcShowStatus(`${v} is already on the list.`, "warn");
       return;
     }
-    recipState.emails.push(v);
+    recipState.pendingAdditions.push(v);
     newEmailInput.value = "";
     rcHideStatus();
     rcRender();
@@ -726,16 +880,12 @@
   newEmailInput.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); rcTryAdd(); } });
   saveBtn.addEventListener("click", rcSave);
   discardBtn.addEventListener("click", () => {
-    recipState.emails = recipState.originalEmails.slice();
+    recipState.pendingAdditions = [];
+    recipState.pendingRemovals = new Set();
     rcHideStatus();
     rcRender();
   });
   $("recipients-setup-link").addEventListener("click", openSetup);
-
-  // When the user finishes the token setup flow, the recipient card needs to
-  // switch from locked (read-only) to unlocked. Wrap the existing setup-save
-  // handler to also refresh the recipients view.
-  const originalSetupSave = $("setup-save").onclick;
   $("setup-save").addEventListener("click", () => { rcLoad(); });
 
   refreshTokenState();
