@@ -10,8 +10,14 @@ Runs entirely on GitHub Actions — no machine of yours needs to be on.
   checks the current time in `America/New_York` and only sends when the local
   hour matches `send_hour_local` (default `6`). This handles EST/EDT transitions
   automatically.
-- **Word selection.** A word is picked at random from [`words.txt`](words.txt),
-  excluding any used in the last `recent_window_days` (default `30`).
+- **Word selection.** A word is picked at random from [`words.txt`](words.txt)
+  (GRE list) or [`difficult_words.txt`](difficult_words.txt) (more obscure
+  vocabulary), excluding any used in the last `recent_window_days` (default
+  `30`). When more than one word is sent, the script mixes sources:
+    - 1 word: 1 GRE
+    - 2 words: 1 GRE + 1 Difficult
+    - 3+ words: (count − 1) GRE + 1 Difficult
+  The email shows a small badge above each word marking its source.
 - **Definition lookup.** Pulled from the free dictionaryapi.dev. If lookup fails,
   the email still goes out with the Merriam-Webster link as the source of truth.
 - **State.** Recently-sent words are tracked in `state.json`, which the workflow
@@ -52,7 +58,14 @@ GMAIL_SENDER='you@gmail.com' GMAIL_APP_PASSWORD='abcd efgh ijkl mnop' \
 
 Add `--dry-run` to see the rendered email without sending it.
 
-## Word list
+## Word lists
 
-[`words.txt`](words.txt) is a one-word-per-line list. Edit on github.com to add
-or remove entries. Words are matched case-insensitively against `state.json`.
+Both lists are one-word-per-line plain text:
+
+- [`words.txt`](words.txt) — ~400 standard GRE-prep words
+- [`difficult_words.txt`](difficult_words.txt) — ~800 more obscure entries
+  (archaic, scientific, legal Latin, literary). Used only when more than one
+  word is sent in a single email.
+
+Edit either file on github.com to add or remove entries. Matching against
+`state.json` is case-insensitive.

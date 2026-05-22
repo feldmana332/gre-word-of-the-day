@@ -18,10 +18,16 @@ import requests
 ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "config.json"
 WORDS_PATH = ROOT / "words.txt"
+DIFFICULT_PATH = ROOT / "difficult_words.txt"
 STATE_PATH = ROOT / "state.json"
 
 MW_URL = "https://www.merriam-webster.com/dictionary/{word}"
 FREE_DICT_API = "https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
+
+# Sources used in word picks. Kept short so they fit neatly in email badges.
+SOURCE_GRE = "gre"
+SOURCE_DIFFICULT = "difficult"
+SOURCE_LABELS = {SOURCE_GRE: "GRE", SOURCE_DIFFICULT: "Difficult"}
 
 
 def load_config() -> dict:
@@ -29,9 +35,15 @@ def load_config() -> dict:
         return json.load(f)
 
 
-def load_words() -> list[str]:
-    with open(WORDS_PATH) as f:
+def load_word_file(path: Path) -> list[str]:
+    """Load a one-word-per-line list, lowercased and stripped."""
+    with open(path) as f:
         return [line.strip().lower() for line in f if line.strip()]
+
+
+def load_words() -> list[str]:
+    """Backward-compat wrapper that still loads the GRE list only."""
+    return load_word_file(WORDS_PATH)
 
 
 def load_state() -> dict:
@@ -68,10 +80,39 @@ def pick_words(all_words: list[str], avoid: set[str], count: int) -> list[str]:
     return candidates[:count]
 
 
-def lookup_definition(word: str) -> dict:
-    """Return a dict with keys: word, phonetic, entries (list of {pos, definitions:[{def,example}], etymology}), source_url."""
+def pick_words_mixed(
+    gre_pool: list[str],
+    difficult_pool: list[str],
+    avoid: set[str],
+    count: int,
+) -> list[tuple[str, str]]:
+    """Pick `count` words split between the two lists.
+
+    Rules:
+      count == 1: 1 word, from the GRE list
+      count == 2: 1 GRE + 1 Difficult
+      count >= 3: (count - 1) GRE + 1 Difficult
+
+    Returns a list of (word, source) tuples in the order they should appear
+    in the email. Difficult word(s) come last so the harder material is read
+    after the easier warm-up.
+    """
+    if count <= 1:
+        return [(w, SOURCE_GRE) for w in pick_words(gre_pool, avoid, 1)]
+    num_difficult = 1
+    num_gre = max(1, count - num_difficult)
+    gre = pick_words(gre_pool, avoid, num_gre)
+    # Make sure a difficult word isn't accidentally the same as one of the
+    # GRE picks (possible if the two lists overlap).
+    diff = pick_words(difficult_pool, avoid | set(gre), num_difficult)
+    return [(w, SOURCE_GRE) for w in gre] + [(w, SOURCE_DIFFICULT) for w in diff]
+
+
+def lookup_definition(word: str, source: str = SOURCE_GRE) -> dict:
+    """Return a dict with keys: word, source, phonetic, entries, source_url, lookup_ok."""
     out = {
         "word": word,
+        "source": source,
         "phonetic": None,
         "entries": [],
         "source_url": MW_URL.format(word=word),
@@ -106,10 +147,26 @@ def lookup_definition(word: str) -> dict:
     return out
 
 
+def _badge_html(source: str) -> str:
+    """Small colored pill above each word indicating which list it came from."""
+    if source == SOURCE_DIFFICULT:
+        bg, fg = "#7d1f2c", "#fff5f6"   # deep crimson — visually distinct from GRE
+        label = "Difficult Word"
+    else:
+        bg, fg = "#1a2a44", "#eaf0fb"   # navy
+        label = "GRE Word"
+    return (
+        f'<span style="display:inline-block;background:{bg};color:{fg};'
+        f'font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;'
+        f'padding:4px 10px;border-radius:12px;margin-bottom:8px;">{label}</span>'
+    )
+
+
 def render_html(words_data: list[dict]) -> str:
     rows = []
     for w in words_data:
         sections = []
+        sections.append(_badge_html(w.get("source", SOURCE_GRE)))
         sections.append(
             f'<h2 style="margin-bottom:4px;color:#1a2a44;font-family:Georgia,serif;font-size:32px;">{w["word"]}</h2>'
         )
@@ -143,12 +200,21 @@ def render_html(words_data: list[dict]) -> str:
             + "</div>"
         )
     today_str = datetime.now(ZoneInfo("America/New_York")).strftime("%A, %B %d, %Y")
+    # Header text adapts to whether we sent a mixed batch.
+    has_difficult = any(w.get("source") == SOURCE_DIFFICULT for w in words_data)
+    has_gre = any(w.get("source", SOURCE_GRE) == SOURCE_GRE for w in words_data)
+    if has_difficult and has_gre:
+        header_label = "GRE &amp; Difficult Words of the Day"
+    elif has_difficult:
+        header_label = "Difficult Word of the Day"
+    else:
+        header_label = "GRE Word of the Day"
     return (
         '<div style="background:#f6f8fa;padding:24px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;color:#24292e;">'
         f'<div style="max-width:600px;margin:0 auto;">'
-        f'<div style="color:#666;font-size:13px;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">GRE Word of the Day &middot; {today_str}</div>'
+        f'<div style="color:#666;font-size:13px;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">{header_label} &middot; {today_str}</div>'
         + "".join(rows)
-        + '<div style="color:#999;font-size:12px;margin-top:8px;text-align:center;">Sent by your GRE Word of the Day pipeline.</div>'
+        + '<div style="color:#999;font-size:12px;margin-top:8px;text-align:center;">Sent by your Word of the Day pipeline.</div>'
         "</div></div>"
     )
 
@@ -156,10 +222,20 @@ def render_html(words_data: list[dict]) -> str:
 def render_text(words_data: list[dict]) -> str:
     lines = []
     today_str = datetime.now(ZoneInfo("America/New_York")).strftime("%A, %B %d, %Y")
-    lines.append(f"GRE Word of the Day  -  {today_str}")
+    has_difficult = any(w.get("source") == SOURCE_DIFFICULT for w in words_data)
+    has_gre = any(w.get("source", SOURCE_GRE) == SOURCE_GRE for w in words_data)
+    if has_difficult and has_gre:
+        title = "GRE & Difficult Words of the Day"
+    elif has_difficult:
+        title = "Difficult Word of the Day"
+    else:
+        title = "GRE Word of the Day"
+    lines.append(f"{title}  -  {today_str}")
     lines.append("=" * 60)
     for w in words_data:
         lines.append("")
+        label = SOURCE_LABELS.get(w.get("source", SOURCE_GRE), "Word")
+        lines.append(f"[{label.upper()} WORD]")
         header = w["word"].upper()
         if w.get("phonetic"):
             header += f"  {w['phonetic']}"
@@ -201,9 +277,18 @@ def send_email(
             smtp.send_message(msg)
 
 
-def build_subject(words: list[str]) -> str:
-    label = "Word" if len(words) == 1 else "Words"
-    return f"GRE {label} of the Day: " + ", ".join(words)
+def build_subject(picks: list[tuple[str, str]]) -> str:
+    """`picks` is a list of (word, source) tuples — same shape pick_words_mixed returns."""
+    words = [w for w, _ in picks]
+    has_difficult = any(s == SOURCE_DIFFICULT for _, s in picks)
+    has_gre = any(s == SOURCE_GRE for _, s in picks)
+    if has_difficult and has_gre:
+        prefix = "GRE & Difficult Words of the Day"
+    elif has_difficult:
+        prefix = "Difficult Word of the Day"
+    else:
+        prefix = "GRE Word of the Day" if len(words) == 1 else "GRE Words of the Day"
+    return f"{prefix}: " + ", ".join(words)
 
 
 def main() -> int:
@@ -250,19 +335,25 @@ def main() -> int:
     word_count = args.count if args.count is not None else int(config["default_word_count"])
     word_count = max(1, min(word_count, 5))
 
-    words_list = load_words()
+    gre_pool = load_word_file(WORDS_PATH)
+    difficult_pool = load_word_file(DIFFICULT_PATH) if DIFFICULT_PATH.exists() else []
     avoid = recent_words(state, int(config["recent_window_days"]))
-    chosen = pick_words(words_list, avoid, word_count)
-    print(f"[pick] {chosen}")
 
-    words_data = [lookup_definition(w) for w in chosen]
+    if difficult_pool:
+        picks = pick_words_mixed(gre_pool, difficult_pool, avoid, word_count)
+    else:
+        # Fallback if the difficult list is missing — single-source GRE picks.
+        picks = [(w, SOURCE_GRE) for w in pick_words(gre_pool, avoid, word_count)]
+    print(f"[pick] {[(w, s) for w, s in picks]}")
+
+    words_data = [lookup_definition(w, source=s) for w, s in picks]
     for w in words_data:
         if not w["lookup_ok"]:
             print(f"[warn] Definition lookup failed for: {w['word']}")
 
     html = render_html(words_data)
     text = render_text(words_data)
-    subject = build_subject(chosen)
+    subject = build_subject(picks)
 
     if args.dry_run:
         print("[dry-run] Subject:", subject)
@@ -293,7 +384,11 @@ def main() -> int:
     print("[ok] Sent.")
 
     state.setdefault("history", []).append(
-        {"date": now_local.date().isoformat(), "words": chosen}
+        {
+            "date": now_local.date().isoformat(),
+            "words": [w for w, _ in picks],
+            "sources": [s for _, s in picks],
+        }
     )
     state["last_sent_date"] = now_local.date().isoformat()
     cutoff = (now_local.date() - timedelta(days=int(config["recent_window_days"]) * 2)).isoformat()
