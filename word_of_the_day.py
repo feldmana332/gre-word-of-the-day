@@ -278,7 +278,13 @@ def main() -> int:
     if recipients_override:
         recipients = [r.strip() for r in recipients_override.split(",") if r.strip()]
     else:
-        recipients = list(config["recipients"])
+        recipients = list(config.get("recipients", []))
+    if not recipients:
+        print(
+            "[error] No recipients configured. Set the RECIPIENTS secret (comma-separated emails) or populate recipients in config.json.",
+            file=sys.stderr,
+        )
+        return 3
 
     print(f"[send] To: {recipients}  Subject: {subject}")
     send_email(sender, password, recipients, subject, html, text)
