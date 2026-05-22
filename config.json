@@ -1,7 +1,8 @@
 {
   "recipients": [
     "af1@me.com",
-    "alanfeld@upenn.edu"
+    "alanfeld@upenn.edu",
+    "test@floflo.com"
   ],
   "default_word_count": 1,
   "send_hour_local": 6,
