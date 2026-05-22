@@ -8,7 +8,7 @@ import os
 import random
 import smtplib
 import sys
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from email.message import EmailMessage
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -23,6 +23,8 @@ STATE_PATH = ROOT / "state.json"
 
 MW_URL = "https://www.merriam-webster.com/dictionary/{word}"
 FREE_DICT_API = "https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
+
+LLM_MODEL = "claude-haiku-4-5"
 
 # Sources used in word picks. Kept short so they fit neatly in email badges.
 SOURCE_GRE = "gre"
@@ -108,6 +110,117 @@ def pick_words_mixed(
     return [(w, SOURCE_GRE) for w in gre] + [(w, SOURCE_DIFFICULT) for w in diff]
 
 
+# ---------------------------------------------------------------------------
+# LLM-generated example sentences (optional, controlled by config + api key)
+# ---------------------------------------------------------------------------
+# generate_example_sentence makes ONE Claude Haiku call per word. The result
+# is cached in state.json under "examples", keyed by word, so each word costs
+# at most one API call across the lifetime of the project. The wrapper
+# get_or_generate_example handles the cache lookup; main() calls it.
+#
+# Designed to NEVER crash the email pipeline. Any error returns None and the
+# email goes out with just the dictionary content.
+
+def generate_example_sentence(
+    word: str,
+    definition: str,
+    api_key: str,
+    *,
+    timeout_seconds: float = 15.0,
+) -> str | None:
+    """Generate one example sentence using `word`. Returns None on any failure."""
+    if not (api_key and word):
+        return None
+
+    # Import locally so the script still runs when LLM examples are disabled
+    # and the anthropic package isn't installed.
+    try:
+        import anthropic
+    except ImportError:
+        print("[warn] anthropic package not installed; skipping LLM example.")
+        return None
+
+    defn = (definition or "").strip()
+    if len(defn) > 500:
+        defn = defn[:500] + "..."
+
+    client = anthropic.Anthropic(
+        api_key=api_key,
+        timeout=timeout_seconds,
+        max_retries=2,  # SDK auto-retries 429 and 5xx with exponential backoff
+    )
+
+    try:
+        msg = client.messages.create(
+            model=LLM_MODEL,
+            max_tokens=200,
+            system=(
+                "You write a single example sentence demonstrating a vocabulary word "
+                "in natural context. Output ONLY the sentence itself — no quotes around "
+                "it, no preamble like 'Here is an example:', no explanation. The sentence "
+                "should be memorable, natural-sounding, and clearly convey the word's "
+                "meaning through context. Aim for 15-25 words."
+            ),
+            messages=[
+                {
+                    "role": "user",
+                    "content": (
+                        f"Word: {word}\n"
+                        f"Definition: {defn}\n\n"
+                        f'Write one example sentence using "{word}".'
+                    ),
+                }
+            ],
+        )
+    except anthropic.APIError as e:
+        # Covers RateLimitError, AuthenticationError, BadRequestError, etc.
+        print(f"[warn] LLM example failed for {word!r}: {type(e).__name__}: {e}")
+        return None
+    except Exception as e:
+        # Defensive — never crash the pipeline.
+        print(f"[warn] LLM example unexpected error for {word!r}: {type(e).__name__}: {e}")
+        return None
+
+    for block in msg.content:
+        if getattr(block, "type", None) == "text":
+            sentence = block.text.strip().strip('"“”').strip()
+            return sentence or None
+    return None
+
+
+def get_or_generate_example(
+    word: str,
+    definition: str,
+    state: dict,
+    api_key: str | None,
+) -> str | None:
+    """Return a cached example if present, else generate and cache. Mutates `state`."""
+    if not api_key:
+        return None
+    cache = state.setdefault("examples", {})
+    cached = cache.get(word)
+    if cached and cached.get("sentence"):
+        return cached["sentence"]
+    sentence = generate_example_sentence(word, definition, api_key)
+    if sentence:
+        cache[word] = {
+            "sentence": sentence,
+            "model": LLM_MODEL,
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+        }
+    return sentence
+
+
+def _best_definition_for_word(words_data_entry: dict) -> str:
+    """Extract the first definition string for a word, for use in LLM prompts."""
+    for entry in words_data_entry.get("entries", []):
+        for d in entry.get("definitions", []):
+            text = d.get("definition", "")
+            if text:
+                return text
+    return ""
+
+
 def lookup_definition(word: str, source: str = SOURCE_GRE) -> dict:
     """Return a dict with keys: word, source, phonetic, entries, source_url, lookup_ok."""
     out = {
@@ -191,6 +304,13 @@ def render_html(words_data: list[dict]) -> str:
             sections.append(
                 '<div style="color:#a33;margin-top:8px;">Definition lookup unavailable — see source link below.</div>'
             )
+        if w.get("llm_example"):
+            sections.append(
+                '<div style="margin-top:16px;padding:12px 16px;background:#f0f7ff;border-left:3px solid #1a73e8;border-radius:4px;">'
+                '<div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#1a73e8;margin-bottom:4px;">In context</div>'
+                f'<div style="color:#24292e;font-style:italic;">{w["llm_example"]}</div>'
+                "</div>"
+            )
         sections.append(
             f'<div style="margin-top:16px;"><a href="{w["source_url"]}" style="color:#1a73e8;text-decoration:none;">View on Merriam-Webster &rarr;</a></div>'
         )
@@ -250,6 +370,10 @@ def render_text(words_data: list[dict]) -> str:
                         lines.append(f'     "{d["example"]}"')
         else:
             lines.append("(Definition unavailable — see source link.)")
+        if w.get("llm_example"):
+            lines.append("")
+            lines.append("In context:")
+            lines.append(f"  {w['llm_example']}")
         lines.append(f"\nSource: {w['source_url']}")
         lines.append("")
     return "\n".join(lines)
@@ -350,6 +474,22 @@ def main() -> int:
     for w in words_data:
         if not w["lookup_ok"]:
             print(f"[warn] Definition lookup failed for: {w['word']}")
+
+    # LLM-generated example sentences (optional). Cached per-word in state.json
+    # so each word costs at most one Claude call ever.
+    if config.get("enable_llm_examples"):
+        anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
+        if anthropic_key:
+            for w in words_data:
+                defn = _best_definition_for_word(w)
+                example = get_or_generate_example(w["word"], defn, state, anthropic_key)
+                if example:
+                    w["llm_example"] = example
+                    print(f"[llm] {w['word']}: {example}")
+                else:
+                    print(f"[llm] {w['word']}: (no example available)")
+        else:
+            print("[llm] enable_llm_examples=true but ANTHROPIC_API_KEY not set; skipping.")
 
     html = render_html(words_data)
     text = render_text(words_data)
