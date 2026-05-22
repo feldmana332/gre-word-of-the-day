@@ -12,7 +12,11 @@
     --ink: #1a2a44;
     --muted: #5a6678;
     --accent: #1a73e8;
+    --accent-dark: #1456b8;
     --border: #e1e4e8;
+    --success: #1f883d;
+    --error: #cf222e;
+    --warn: #9a6700;
   }
   * { box-sizing: border-box; }
   body {
@@ -25,12 +29,7 @@
   }
   .wrap { max-width: 600px; margin: 0 auto; }
   header { padding: 24px 8px 8px; }
-  h1 {
-    font-family: Georgia, serif;
-    margin: 0;
-    font-size: 28px;
-    color: var(--ink);
-  }
+  h1 { font-family: Georgia, serif; margin: 0; font-size: 28px; color: var(--ink); }
   .sub { color: var(--muted); margin-top: 4px; font-size: 14px; }
   .card {
     background: var(--card);
@@ -46,40 +45,127 @@
     letter-spacing: 1px;
     color: var(--muted);
   }
-  .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
-  a.btn {
-    flex: 1 1 0;
-    min-width: 110px;
-    display: inline-block;
+  .word-picker { display: flex; gap: 8px; margin: 12px 0 16px; }
+  .word-picker label {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--muted);
+    user-select: none;
+  }
+  .word-picker input { display: none; }
+  .word-picker input:checked + label {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: #eaf2ff;
+  }
+  .send-btn, .btn-primary {
+    width: 100%;
+    padding: 16px;
+    border: 0;
+    border-radius: 10px;
     background: var(--accent);
     color: white;
-    text-decoration: none;
-    padding: 14px 16px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .send-btn:hover, .btn-primary:hover { background: var(--accent-dark); }
+  .send-btn:disabled { background: #b1c5e8; cursor: not-allowed; }
+  .status {
+    margin-top: 14px;
+    padding: 12px;
     border-radius: 8px;
-    text-align: center;
+    font-size: 14px;
+    display: none;
+  }
+  .status.show { display: block; }
+  .status.info { background: #ddebff; color: var(--accent-dark); }
+  .status.success { background: #dafbe1; color: var(--success); }
+  .status.error { background: #ffebe9; color: var(--error); }
+  .status.warn { background: #fff8c5; color: var(--warn); }
+  .status a { color: inherit; font-weight: 600; }
+  .setup-hint {
+    margin-top: 12px;
+    padding: 12px;
+    background: #fff8c5;
+    border-left: 3px solid var(--warn);
+    border-radius: 4px;
+    font-size: 13px;
+    color: #7a5c00;
+  }
+  .setup-hint button {
+    background: transparent;
+    border: 0;
+    color: var(--accent);
     font-weight: 600;
-    font-size: 15px;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
   }
-  a.btn.secondary {
-    background: var(--card);
-    color: var(--ink);
-    border: 1px solid var(--border);
-  }
-  a.btn:hover { opacity: 0.92; }
   ul.links { list-style: none; padding: 0; margin: 0; }
   ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); }
   ul.links li:last-child { border-bottom: 0; }
-  ul.links a {
+  ul.links a, ul.links button.link {
     color: var(--accent);
     text-decoration: none;
     font-weight: 500;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
   }
-  ul.links a:after { content: "›"; color: var(--muted); }
-  .note { color: var(--muted); font-size: 13px; margin-top: 8px; }
+  ul.links a:after, ul.links button.link:after { content: "›"; color: var(--muted); }
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 25, 40, 0.55);
+    z-index: 100;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 16px;
+    overflow-y: auto;
+  }
+  .modal.show { display: flex; }
+  .modal-card {
+    background: var(--card);
+    border-radius: 12px;
+    max-width: 520px;
+    width: 100%;
+    margin-top: 32px;
+    padding: 24px;
+  }
+  .modal-card h3 { margin: 0 0 8px; font-family: Georgia, serif; font-size: 22px; }
+  .modal-card p { color: var(--muted); font-size: 14px; }
+  .modal-card ol { color: var(--muted); font-size: 14px; padding-left: 20px; }
+  .modal-card ol li { margin-bottom: 6px; }
+  .modal-card label { display: block; margin: 14px 0 4px; font-weight: 600; font-size: 14px; }
+  .modal-card input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 14px;
+  }
+  .modal-actions { display: flex; gap: 8px; margin-top: 16px; }
+  .modal-actions button { flex: 1; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; border: 0; font-size: 15px; }
+  .modal-actions .btn-cancel { background: var(--card); border: 1px solid var(--border); color: var(--ink); }
+  .modal-actions .btn-primary { background: var(--accent); color: white; }
   footer { color: var(--muted); font-size: 12px; text-align: center; padding: 24px 8px; }
+  code { background: #f0f3f6; padding: 2px 6px; border-radius: 4px; font-family: ui-monospace, Menlo, monospace; font-size: 13px; }
 </style>
 </head>
 <body>
@@ -91,38 +177,224 @@
 
   <section class="card">
     <h2>Send Now</h2>
-    <p class="note">Opens the GitHub Actions "Run workflow" form. Set word count (1-5) and tap Run.</p>
-    <div class="btn-row">
-      <a class="btn" href="https://github.com/feldmana332/gre-word-of-the-day/actions/workflows/daily.yml">Run workflow</a>
+    <p style="color:var(--muted);font-size:14px;margin:0 0 4px;">Email arrives in about 30 seconds.</p>
+    <div class="word-picker" role="radiogroup" aria-label="Word count">
+      <input type="radio" id="wc-1" name="word-count" value="1" checked />
+      <label for="wc-1">1 word</label>
+      <input type="radio" id="wc-2" name="word-count" value="2" />
+      <label for="wc-2">2 words</label>
+      <input type="radio" id="wc-3" name="word-count" value="3" />
+      <label for="wc-3">3 words</label>
+    </div>
+    <button id="send-btn" class="send-btn">Send now</button>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <div id="setup-hint" class="setup-hint" style="display:none;">
+      First time on this device? <button id="open-setup">Set up access token</button> &mdash; takes about 2 minutes.
     </div>
   </section>
 
   <section class="card">
     <h2>Recent Runs &amp; Logs</h2>
     <ul class="links">
-      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/actions/workflows/daily.yml">View recent workflow runs</a></li>
-      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/blob/main/state.json">View sent-history (state.json)</a></li>
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/actions/workflows/daily.yml" target="_blank" rel="noopener">View recent workflow runs</a></li>
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/blob/main/state.json" target="_blank" rel="noopener">View sent-history (state.json)</a></li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Edit Settings</h2>
     <ul class="links">
-      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/edit/main/config.json">Edit recipients, default word count &amp; send time</a></li>
-      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/edit/main/words.txt">Edit word list</a></li>
-      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/settings/secrets/actions">Edit Gmail credentials (secrets)</a></li>
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/edit/main/config.json" target="_blank" rel="noopener">Edit recipients, default word count &amp; send time</a></li>
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/edit/main/words.txt" target="_blank" rel="noopener">Edit word list</a></li>
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/settings/secrets/actions" target="_blank" rel="noopener">Edit Gmail credentials (secrets)</a></li>
     </ul>
   </section>
 
   <section class="card">
-    <h2>Help</h2>
+    <h2>This Device</h2>
     <ul class="links">
-      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/blob/main/README.md">Read the README</a></li>
-      <li><a href="https://github.com/feldmana332/gre-word-of-the-day">Browse repo</a></li>
+      <li><button class="link" id="manage-token">Manage access token on this device</button></li>
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day/blob/main/README.md" target="_blank" rel="noopener">Read the README</a></li>
+      <li><a href="https://github.com/feldmana332/gre-word-of-the-day" target="_blank" rel="noopener">Browse repo</a></li>
     </ul>
   </section>
 
-  <footer>Powered by GitHub Actions. Free for personal use.</footer>
+  <footer>Powered by GitHub Actions. Token stays in this browser only.</footer>
 </div>
+
+<div id="setup-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="setup-title">
+  <div class="modal-card">
+    <h3 id="setup-title">Set up access token</h3>
+    <p>To enable the one-click <strong>Send now</strong> button, this device needs a small access token that lets it trigger the GitHub workflow.</p>
+
+    <ol>
+      <li>Open <a href="https://github.com/settings/tokens/new?description=Word%20of%20the%20Day%20trigger&amp;scopes=public_repo" target="_blank" rel="noopener">this pre-filled token form</a> &mdash; scope and name are already set.</li>
+      <li>Set <em>Expiration</em> to whatever you prefer (No expiration is fine).</li>
+      <li>Scroll to the bottom and click the green <strong>Generate token</strong> button.</li>
+      <li>Copy the token (starts with <code>ghp_&hellip;</code>) and paste it below.</li>
+    </ol>
+
+    <label for="pat-input">Paste the token here</label>
+    <input id="pat-input" type="password" placeholder="ghp_..." autocomplete="off" />
+
+    <p style="font-size:13px;color:var(--muted);margin-top:10px;">
+      The token is stored only in this browser&rsquo;s local storage. It can <em>only</em> trigger workflow runs in this repo (<code>public_repo</code> scope). You can remove it any time from the &ldquo;This Device&rdquo; section.
+    </p>
+
+    <div class="modal-actions">
+      <button class="btn-cancel" id="setup-cancel">Cancel</button>
+      <button class="btn-primary" id="setup-save">Save token</button>
+    </div>
+  </div>
+</div>
+
+<div id="manage-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="manage-title">
+  <div class="modal-card">
+    <h3 id="manage-title">Manage access token</h3>
+    <p id="manage-status">A token is saved on this device.</p>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="manage-close">Close</button>
+      <button class="btn-primary" id="manage-replace">Replace token</button>
+      <button class="btn-primary" id="manage-clear" style="background:var(--error);">Forget token</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const REPO = "feldmana332/gre-word-of-the-day";
+  const WORKFLOW = "daily.yml";
+  const REF = "main";
+  const TOKEN_KEY = "gh_pat_word_of_the_day";
+
+  const $ = (id) => document.getElementById(id);
+  const sendBtn = $("send-btn");
+  const status = $("status");
+  const setupHint = $("setup-hint");
+  const setupModal = $("setup-modal");
+  const manageModal = $("manage-modal");
+  const patInput = $("pat-input");
+  const manageStatus = $("manage-status");
+
+  function getToken() { return localStorage.getItem(TOKEN_KEY); }
+  function setToken(v) { localStorage.setItem(TOKEN_KEY, v); }
+  function clearToken() { localStorage.removeItem(TOKEN_KEY); }
+
+  function refreshTokenState() {
+    if (getToken()) {
+      setupHint.style.display = "none";
+      manageStatus.textContent = "A token is saved on this device. The Send now button is enabled.";
+    } else {
+      setupHint.style.display = "block";
+      manageStatus.textContent = "No token is saved on this device. The Send now button will prompt you to set one up.";
+    }
+  }
+
+  function showStatus(message, kind) {
+    status.innerHTML = message;
+    status.className = "status show " + kind;
+  }
+  function hideStatus() { status.className = "status"; status.innerHTML = ""; }
+
+  function getWordCount() {
+    const el = document.querySelector('input[name="word-count"]:checked');
+    return el ? el.value : "1";
+  }
+
+  async function triggerWorkflow() {
+    const token = getToken();
+    if (!token) {
+      openSetup();
+      return;
+    }
+    const wc = getWordCount();
+    sendBtn.disabled = true;
+    showStatus(`Sending request for ${wc} word${wc === "1" ? "" : "s"}&hellip;`, "info");
+
+    try {
+      const resp = await fetch(
+        `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
+        {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Accept": "application/vnd.github+json",
+            "Content-Type": "application/json",
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+          body: JSON.stringify({ ref: REF, inputs: { word_count: wc } }),
+        }
+      );
+      if (resp.status === 204) {
+        showStatus(
+          `Sent &#10003; &nbsp;Check your email in about 30 seconds. ` +
+          `<a href="https://github.com/${REPO}/actions/workflows/${WORKFLOW}" target="_blank" rel="noopener">View run</a>.`,
+          "success"
+        );
+      } else if (resp.status === 401 || resp.status === 403) {
+        showStatus(
+          `Token doesn&rsquo;t work (HTTP ${resp.status}). It may have expired or been revoked. ` +
+          `<a href="#" id="reauth">Set up a new token</a>.`,
+          "error"
+        );
+        document.getElementById("reauth").addEventListener("click", (e) => {
+          e.preventDefault();
+          clearToken();
+          refreshTokenState();
+          openSetup();
+        });
+      } else {
+        const body = await resp.text();
+        showStatus(`Error (HTTP ${resp.status}): ${body.slice(0, 200)}`, "error");
+      }
+    } catch (err) {
+      showStatus(`Network error: ${err.message}`, "error");
+    } finally {
+      sendBtn.disabled = false;
+    }
+  }
+
+  function openSetup() {
+    patInput.value = "";
+    setupModal.classList.add("show");
+    setTimeout(() => patInput.focus(), 50);
+  }
+  function closeSetup() { setupModal.classList.remove("show"); }
+  function openManage() {
+    refreshTokenState();
+    manageModal.classList.add("show");
+  }
+  function closeManage() { manageModal.classList.remove("show"); }
+
+  sendBtn.addEventListener("click", triggerWorkflow);
+  $("open-setup").addEventListener("click", openSetup);
+  $("manage-token").addEventListener("click", openManage);
+  $("setup-cancel").addEventListener("click", closeSetup);
+  $("setup-save").addEventListener("click", () => {
+    const val = patInput.value.trim();
+    if (!val) {
+      patInput.focus();
+      return;
+    }
+    setToken(val);
+    closeSetup();
+    refreshTokenState();
+    showStatus("Token saved on this device. Try the Send now button.", "success");
+  });
+  $("manage-close").addEventListener("click", closeManage);
+  $("manage-replace").addEventListener("click", () => { closeManage(); openSetup(); });
+  $("manage-clear").addEventListener("click", () => {
+    clearToken();
+    refreshTokenState();
+    closeManage();
+    showStatus("Token removed from this device.", "warn");
+  });
+  [setupModal, manageModal].forEach((m) => {
+    m.addEventListener("click", (e) => { if (e.target === m) m.classList.remove("show"); });
+  });
+
+  refreshTokenState();
+})();
+</script>
 </body>
 </html>
