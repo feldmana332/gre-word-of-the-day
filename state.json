@@ -98,9 +98,22 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-05-23",
+      "words": [
+        "bellicose",
+        "zenith",
+        "spalpeen"
+      ],
+      "sources": [
+        "gre",
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-05-22",
+  "last_sent_date": "2026-05-23",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -111,6 +124,21 @@
       "sentence": "The vidame of Chartres held considerable authority over the cathedral's vast lands and answered directly to the bishop himself.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-05-22T21:58:11.185053+00:00"
+    },
+    "bellicose": {
+      "sentence": "The bellicose rhetoric from both nations escalated tensions and brought the world closer to armed conflict.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-23T17:35:42.084710+00:00"
+    },
+    "zenith": {
+      "sentence": "At noon, the sun reaches its zenith directly overhead, casting almost no shadows on the ground below.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-23T17:35:43.051850+00:00"
+    },
+    "spalpeen": {
+      "sentence": "The old farmer warned his neighbors that the traveling spalpeen would likely pilfer vegetables from their gardens at night.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-23T17:35:44.305147+00:00"
     }
   }
 }
