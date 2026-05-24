@@ -441,21 +441,20 @@ def main() -> int:
     now_local = datetime.now(tz)
 
     if args.trigger == "scheduled":
-        if now_local.hour != int(config["send_hour_local"]):
+        send_hour = int(config["send_hour_local"])
+        # GitHub's scheduled crons are delayed (often 30-60+ min) and sometimes
+        # dropped, so an exact `== send_hour` match misses the day whenever the
+        # run lands late. Treat send_hour as the start of a morning send window;
+        # the last_sent_date guard below still keeps it to one send per day.
+        window_hours = int(config.get("send_window_hours", 4))
+        if not (send_hour <= now_local.hour < send_hour + window_hours):
             print(
-                f"[skip] Scheduled run fired at {now_local.isoformat()} but send_hour_local={config['send_hour_local']}; not sending."
+                f"[skip] Scheduled run fired at {now_local.isoformat()} "
+                f"(local hour {now_local.hour}); outside send window "
+                f"[{send_hour}, {send_hour + window_hours}). Not sending."
             )
             return 0
-
-    state = load_state()
-
-    if (
-        args.trigger == "scheduled"
-        and state.get("last_sent_date") == now_local.date().isoformat()
-    ):
-        print(f"[skip] Already sent today ({state['last_sent_date']}).")
-        return 0
-
+            
     word_count = args.count if args.count is not None else int(config["default_word_count"])
     word_count = max(1, min(word_count, 5))
 
