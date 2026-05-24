@@ -111,9 +111,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-05-24",
+      "words": [
+        "recondite",
+        "xeric"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-05-23",
+  "last_sent_date": "2026-05-24",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -139,6 +150,16 @@
       "sentence": "The old farmer warned his neighbors that the traveling spalpeen would likely pilfer vegetables from their gardens at night.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-05-23T17:35:44.305147+00:00"
+    },
+    "recondite": {
+      "sentence": "The professor's recondite knowledge of medieval manuscripts impressed only the handful of specialists in the dusty university library.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-24T11:56:02.513395+00:00"
+    },
+    "xeric": {
+      "sentence": "The xeric desert landscape, barren of trees and sparse in vegetation, challenged the expedition to find water sources.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-24T11:56:03.801276+00:00"
     }
   }
 }
