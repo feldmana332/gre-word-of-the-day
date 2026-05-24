@@ -5,6 +5,7 @@
   ],
   "default_word_count": 1,
   "send_hour_local": 6,
+  "send_window_hours": 4,
   "timezone": "America/New_York",
   "recent_window_days": 30,
   "enable_llm_examples": true,
