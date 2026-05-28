@@ -122,9 +122,22 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-05-27",
+      "words": [
+        "facetious",
+        "quell",
+        "vicennial"
+      ],
+      "sources": [
+        "gre",
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-05-24",
+  "last_sent_date": "2026-05-27",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -160,6 +173,21 @@
       "sentence": "The xeric desert landscape, barren of trees and sparse in vegetation, challenged the expedition to find water sources.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-05-24T11:56:03.801276+00:00"
+    },
+    "facetious": {
+      "sentence": "When the doctor asked if he'd been exercising, he gave a facetious reply about running late to work instead of admitting his sedentary lifestyle.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-28T01:28:21.868828+00:00"
+    },
+    "quell": {
+      "sentence": "The government deployed extra police officers to quell the violent riots before they spread to neighboring districts.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-28T01:28:22.627650+00:00"
+    },
+    "vicennial": {
+      "sentence": "The vicennial celebration of the company's founding brought together employees from every decade of its twenty-year history.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-28T01:28:23.610112+00:00"
     }
   }
 }
