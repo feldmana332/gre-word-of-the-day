@@ -135,9 +135,18 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-05-28",
+      "words": [
+        "lambent"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-05-27",
+  "last_sent_date": "2026-05-28",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -188,6 +197,11 @@
       "sentence": "The vicennial celebration of the company's founding brought together employees from every decade of its twenty-year history.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-05-28T01:28:23.610112+00:00"
+    },
+    "lambent": {
+      "sentence": "The lambent moonlight danced softly across the still lake, creating shimmering patterns that seemed to breathe with the night.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-28T13:53:55.667576+00:00"
     }
   }
 }
