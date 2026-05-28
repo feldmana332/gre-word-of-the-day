@@ -454,7 +454,16 @@ def main() -> int:
                 f"[{send_hour}, {send_hour + window_hours}). Not sending."
             )
             return 0
-            
+
+    state = load_state()
+
+    if (
+        args.trigger == "scheduled"
+        and state.get("last_sent_date") == now_local.date().isoformat()
+    ):
+        print(f"[skip] Already sent today ({state['last_sent_date']}).")
+        return 0
+
     word_count = args.count if args.count is not None else int(config["default_word_count"])
     word_count = max(1, min(word_count, 5))
 
