@@ -144,9 +144,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-05-29",
+      "words": [
+        "chary"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-05-28",
+  "last_sent_date": "2026-05-29",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -202,6 +211,11 @@
       "sentence": "The lambent moonlight danced softly across the still lake, creating shimmering patterns that seemed to breathe with the night.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-05-28T13:53:55.667576+00:00"
+    },
+    "chary": {
+      "sentence": "She remained chary of strangers after her identity was stolen, always asking detailed questions before sharing personal information.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-29T12:48:09.462345+00:00"
     }
   }
 }
