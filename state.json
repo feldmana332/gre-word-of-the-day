@@ -153,9 +153,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-05-30",
+      "words": [
+        "stricture"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-05-29",
+  "last_sent_date": "2026-05-30",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -216,6 +225,11 @@
       "sentence": "She remained chary of strangers after her identity was stolen, always asking detailed questions before sharing personal information.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-05-29T12:48:09.462345+00:00"
+    },
+    "stricture": {
+      "sentence": "The company's strictures on social media use prevented employees from posting anything controversial online.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-30T11:21:42.652247+00:00"
     }
   }
 }
