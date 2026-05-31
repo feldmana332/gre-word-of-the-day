@@ -162,9 +162,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-05-31",
+      "words": [
+        "tortuous"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-05-30",
+  "last_sent_date": "2026-05-31",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -230,6 +239,11 @@
       "sentence": "The company's strictures on social media use prevented employees from posting anything controversial online.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-05-30T11:21:42.652247+00:00"
+    },
+    "tortuous": {
+      "sentence": "The mountain road twisted through countless switchbacks, creating a tortuous path that made the long drive exhausting for everyone in the car.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-05-31T11:41:20.463447+00:00"
     }
   }
 }
