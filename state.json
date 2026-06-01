@@ -171,9 +171,22 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-01",
+      "words": [
+        "debacle",
+        "tautology",
+        "manticore"
+      ],
+      "sources": [
+        "gre",
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-05-31",
+  "last_sent_date": "2026-06-01",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -244,6 +257,21 @@
       "sentence": "The mountain road twisted through countless switchbacks, creating a tortuous path that made the long drive exhausting for everyone in the car.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-05-31T11:41:20.463447+00:00"
+    },
+    "debacle": {
+      "sentence": "The candidate's campaign turned into a complete debacle after the leaked emails forced him to withdraw from the race.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-01T18:22:25.819796+00:00"
+    },
+    "tautology": {
+      "sentence": "The phrase \"past history\" is a common tautology since history by definition refers to events that have already occurred.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-01T18:22:26.755928+00:00"
+    },
+    "manticore": {
+      "sentence": "The ancient tapestry depicted a fearsome manticore prowling the desert, its human face twisted in hunger as venomous spikes bristled from its scorpion tail.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-01T18:22:27.880870+00:00"
     }
   }
 }
