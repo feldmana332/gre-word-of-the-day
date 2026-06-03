@@ -184,9 +184,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-06-03",
+      "words": [
+        "burgeon",
+        "furibund"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-01",
+  "last_sent_date": "2026-06-03",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -272,6 +283,16 @@
       "sentence": "The ancient tapestry depicted a fearsome manticore prowling the desert, its human face twisted in hunger as venomous spikes bristled from its scorpion tail.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-01T18:22:27.880870+00:00"
+    },
+    "burgeon": {
+      "sentence": "The neglected garden began to burgeon with new life once spring arrived and the rain returned.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-03T15:05:49.537476+00:00"
+    },
+    "furibund": {
+      "sentence": "The furibund protesters stormed the city hall, their faces red with rage as they demanded immediate action on climate change.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-03T15:05:50.641052+00:00"
     }
   }
 }
