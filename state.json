@@ -195,9 +195,18 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-06-04",
+      "words": [
+        "desultory"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-03",
+  "last_sent_date": "2026-06-04",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -293,6 +302,11 @@
       "sentence": "The furibund protesters stormed the city hall, their faces red with rage as they demanded immediate action on climate change.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-03T15:05:50.641052+00:00"
+    },
+    "desultory": {
+      "sentence": "After a long day, he flipped through channels in a desultory manner, never settling on anything long enough to actually watch.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-04T12:45:13.629247+00:00"
     }
   }
 }
