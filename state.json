@@ -213,6 +213,17 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-05",
+      "words": [
+        "surfeit",
+        "contemn"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
   "last_sent_date": "2026-06-05",
@@ -321,6 +332,16 @@
       "sentence": "The jazz singer's mellifluous voice flowed through the smoky club like warm honey, captivating every listener in the room.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-05T12:39:21.374473+00:00"
+    },
+    "surfeit": {
+      "sentence": "The all-you-can-eat buffet left me with such a surfeit of desserts that I couldn't eat another bite for days.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-05T16:37:48.917402+00:00"
+    },
+    "contemn": {
+      "sentence": "The aristocrat would openly contemn the working class, dismissing their concerns as utterly beneath consideration.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-05T16:37:49.756954+00:00"
     }
   }
 }
