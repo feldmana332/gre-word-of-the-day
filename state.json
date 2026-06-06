@@ -224,9 +224,18 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-06-06",
+      "words": [
+        "penurious"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-05",
+  "last_sent_date": "2026-06-06",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -342,6 +351,11 @@
       "sentence": "The aristocrat would openly contemn the working class, dismissing their concerns as utterly beneath consideration.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-05T16:37:49.756954+00:00"
+    },
+    "penurious": {
+      "sentence": "The penurious landlord refused to fix the broken heating system, claiming he couldn't afford the expense.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-06T11:27:43.915808+00:00"
     }
   }
 }
