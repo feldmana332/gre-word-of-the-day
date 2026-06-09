@@ -242,9 +242,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-09",
+      "words": [
+        "prevaricate"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-07",
+  "last_sent_date": "2026-06-09",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -370,6 +379,11 @@
       "sentence": "Her penchant for collecting vintage vinyl records had transformed her apartment into a small museum of rare albums.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-07T11:48:47.396644+00:00"
+    },
+    "prevaricate": {
+      "sentence": "When the witness began to prevaricate during cross-examination, the lawyer pressed harder until he finally admitted the truth.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-09T12:39:09.177120+00:00"
     }
   }
 }
