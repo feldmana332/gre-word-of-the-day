@@ -251,9 +251,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-10",
+      "words": [
+        "parsimonious"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-09",
+  "last_sent_date": "2026-06-10",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -384,6 +393,11 @@
       "sentence": "When the witness began to prevaricate during cross-examination, the lawyer pressed harder until he finally admitted the truth.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-09T12:39:09.177120+00:00"
+    },
+    "parsimonious": {
+      "sentence": "The parsimonious billionaire refused to replace his twenty-year-old car, despite owning dozens of properties worldwide.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-10T12:57:48.724403+00:00"
     }
   }
 }
