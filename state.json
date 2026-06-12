@@ -260,9 +260,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-12",
+      "words": [
+        "approbation"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-10",
+  "last_sent_date": "2026-06-12",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -398,6 +407,11 @@
       "sentence": "The parsimonious billionaire refused to replace his twenty-year-old car, despite owning dozens of properties worldwide.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-10T12:57:48.724403+00:00"
+    },
+    "approbation": {
+      "sentence": "The mayor's approbation of the community center project gave residents confidence that construction would finally begin next month.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-12T12:54:41.622686+00:00"
     }
   }
 }
