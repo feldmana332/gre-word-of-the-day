@@ -269,9 +269,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-13",
+      "words": [
+        "indefatigable"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-12",
+  "last_sent_date": "2026-06-13",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -412,6 +421,11 @@
       "sentence": "The mayor's approbation of the community center project gave residents confidence that construction would finally begin next month.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-12T12:54:41.622686+00:00"
+    },
+    "indefatigable": {
+      "sentence": "The indefatigable researcher spent decades tracking the rare butterfly species across three continents without ever losing enthusiasm.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-13T11:54:23.107574+00:00"
     }
   }
 }
