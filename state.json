@@ -287,9 +287,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-17",
+      "words": [
+        "lugubrious"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-14",
+  "last_sent_date": "2026-06-17",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -440,6 +449,11 @@
       "sentence": "The politician's rivals spread calumny about his business dealings, but an independent investigation proved every accusation completely false.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-14T11:58:39.186017+00:00"
+    },
+    "lugubrious": {
+      "sentence": "The funeral director spoke in such a lugubrious tone that even the cheerful flower arrangements couldn't brighten the oppressive atmosphere.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-17T13:42:11.927945+00:00"
     }
   }
 }
