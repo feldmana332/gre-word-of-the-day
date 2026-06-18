@@ -296,9 +296,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-18",
+      "words": [
+        "fortuitous"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-17",
+  "last_sent_date": "2026-06-18",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -454,6 +463,11 @@
       "sentence": "The funeral director spoke in such a lugubrious tone that even the cheerful flower arrangements couldn't brighten the oppressive atmosphere.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-17T13:42:11.927945+00:00"
+    },
+    "fortuitous": {
+      "sentence": "Our meeting at the coffee shop was entirely fortuitous, as we hadn't planned to be there at the same time in years.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-18T12:54:13.515823+00:00"
     }
   }
 }
