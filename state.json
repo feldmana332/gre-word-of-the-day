@@ -305,9 +305,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-19",
+      "words": [
+        "flippant"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-18",
+  "last_sent_date": "2026-06-19",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -468,6 +477,11 @@
       "sentence": "Our meeting at the coffee shop was entirely fortuitous, as we hadn't planned to be there at the same time in years.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-18T12:54:13.515823+00:00"
+    },
+    "flippant": {
+      "sentence": "When asked about the serious accident, he gave a flippant response that made everyone uncomfortable with his lack of concern.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-19T13:35:24.165966+00:00"
     }
   }
 }
