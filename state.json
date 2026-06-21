@@ -323,9 +323,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-21",
+      "words": [
+        "disabuse"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-20",
+  "last_sent_date": "2026-06-21",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -496,6 +505,11 @@
       "sentence": "Her salary was finally commensurate with her years of experience and advanced qualifications in the field.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-20T11:56:38.590869+00:00"
+    },
+    "disabuse": {
+      "sentence": "The documentary aimed to disabuse viewers of the popular myth that sharks are mindless killers.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-21T12:11:17.486544+00:00"
     }
   }
 }
