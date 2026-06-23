@@ -332,9 +332,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-23",
+      "words": [
+        "cantankerous"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-21",
+  "last_sent_date": "2026-06-23",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -510,6 +519,11 @@
       "sentence": "The documentary aimed to disabuse viewers of the popular myth that sharks are mindless killers.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-21T12:11:17.486544+00:00"
+    },
+    "cantankerous": {
+      "sentence": "The cantankerous old man yelled at every neighbor who dared to walk past his fence.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-23T12:33:40.663810+00:00"
     }
   }
 }
