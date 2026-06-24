@@ -341,9 +341,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-24",
+      "words": [
+        "obtuse"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-23",
+  "last_sent_date": "2026-06-24",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -524,6 +533,11 @@
       "sentence": "The cantankerous old man yelled at every neighbor who dared to walk past his fence.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-23T12:33:40.663810+00:00"
+    },
+    "obtuse": {
+      "sentence": "The painkillers helped obtuse her sharp headache within an hour.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-24T12:19:47.742087+00:00"
     }
   }
 }
