@@ -350,9 +350,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-25",
+      "words": [
+        "verdant"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-24",
+  "last_sent_date": "2026-06-25",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -538,6 +547,11 @@
       "sentence": "The painkillers helped obtuse her sharp headache within an hour.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-24T12:19:47.742087+00:00"
+    },
+    "verdant": {
+      "sentence": "The verdant hills rolled across the countryside, their lush grass glowing emerald in the spring sunlight.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-25T12:22:26.154571+00:00"
     }
   }
 }
