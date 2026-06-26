@@ -359,9 +359,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-26",
+      "words": [
+        "paucity"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-25",
+  "last_sent_date": "2026-06-26",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -552,6 +561,11 @@
       "sentence": "The verdant hills rolled across the countryside, their lush grass glowing emerald in the spring sunlight.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-25T12:22:26.154571+00:00"
+    },
+    "paucity": {
+      "sentence": "The restaurant's paucity of vegetarian options disappointed the large group of vegan diners who had made reservations.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-26T12:11:51.633392+00:00"
     }
   }
 }
