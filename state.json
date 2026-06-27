@@ -368,9 +368,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-27",
+      "words": [
+        "unctuous"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-26",
+  "last_sent_date": "2026-06-27",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -566,6 +575,11 @@
       "sentence": "The restaurant's paucity of vegetarian options disappointed the large group of vegan diners who had made reservations.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-26T12:11:51.633392+00:00"
+    },
+    "unctuous": {
+      "sentence": "The chef's rich sauce was so unctuous that it left a slick coating on every plate it touched.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-27T11:27:28.684643+00:00"
     }
   }
 }
