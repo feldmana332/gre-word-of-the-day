@@ -377,9 +377,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-28",
+      "words": [
+        "truncate"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-27",
+  "last_sent_date": "2026-06-28",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -580,6 +589,11 @@
       "sentence": "The chef's rich sauce was so unctuous that it left a slick coating on every plate it touched.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-27T11:27:28.684643+00:00"
+    },
+    "truncate": {
+      "sentence": "The editor decided to truncate the long introduction so the article would fit on the front page.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-28T11:47:36.664041+00:00"
     }
   }
 }
