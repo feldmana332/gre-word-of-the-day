@@ -386,9 +386,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-06-30",
+      "words": [
+        "pithy"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-28",
+  "last_sent_date": "2026-06-30",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -594,6 +603,11 @@
       "sentence": "The editor decided to truncate the long introduction so the article would fit on the front page.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-28T11:47:36.664041+00:00"
+    },
+    "pithy": {
+      "sentence": "His pithy response of \"No thanks\" cut through hours of awkward conversation and settled the matter immediately.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-06-30T12:09:52.668950+00:00"
     }
   }
 }
