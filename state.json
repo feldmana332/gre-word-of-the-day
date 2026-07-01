@@ -395,9 +395,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-01",
+      "words": [
+        "vacuous"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-06-30",
+  "last_sent_date": "2026-07-01",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -608,6 +617,11 @@
       "sentence": "His pithy response of \"No thanks\" cut through hours of awkward conversation and settled the matter immediately.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-06-30T12:09:52.668950+00:00"
+    },
+    "vacuous": {
+      "sentence": "Her vacuous comments about the weather added nothing to the serious discussion about climate change.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-01T12:34:04.500711+00:00"
     }
   }
 }
