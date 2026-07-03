@@ -413,9 +413,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-03",
+      "words": [
+        "trepidation"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-02",
+  "last_sent_date": "2026-07-03",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -636,6 +645,11 @@
       "sentence": "After the argument, she offered a conciliatory gesture by apologizing and suggesting they compromise on the weekend plans.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-02T12:09:16.291223+00:00"
+    },
+    "trepidation": {
+      "sentence": "She approached the podium with trepidation, her hands trembling as she prepared to deliver her first public speech.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-03T12:09:49.190795+00:00"
     }
   }
 }
