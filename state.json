@@ -422,9 +422,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-04",
+      "words": [
+        "panacea"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-03",
+  "last_sent_date": "2026-07-04",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -650,6 +659,11 @@
       "sentence": "She approached the podium with trepidation, her hands trembling as she prepared to deliver her first public speech.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-03T12:09:49.190795+00:00"
+    },
+    "panacea": {
+      "sentence": "While vitamins are healthy, they're not a panacea that can solve every health problem you might face.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-04T11:27:33.439573+00:00"
     }
   }
 }
