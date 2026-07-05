@@ -431,9 +431,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-05",
+      "words": [
+        "vitiate"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-04",
+  "last_sent_date": "2026-07-05",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -664,6 +673,11 @@
       "sentence": "While vitamins are healthy, they're not a panacea that can solve every health problem you might face.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-04T11:27:33.439573+00:00"
+    },
+    "vitiate": {
+      "sentence": "The scandal's revelation didn't vitiate the professor's decades of groundbreaking research, though it certainly damaged her professional reputation.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-05T11:35:27.814429+00:00"
     }
   }
 }
