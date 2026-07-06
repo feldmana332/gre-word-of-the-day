@@ -440,9 +440,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-06",
+      "words": [
+        "malinger"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-05",
+  "last_sent_date": "2026-07-06",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -678,6 +687,11 @@
       "sentence": "The scandal's revelation didn't vitiate the professor's decades of groundbreaking research, though it certainly damaged her professional reputation.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-05T11:35:27.814429+00:00"
+    },
+    "malinger": {
+      "sentence": "My coworker started malingering after the manager announced the difficult project, suddenly claiming back pain whenever assignments were distributed.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-06T13:45:55.186549+00:00"
     }
   }
 }
