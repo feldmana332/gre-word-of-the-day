@@ -449,9 +449,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-07",
+      "words": [
+        "philistine"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-06",
+  "last_sent_date": "2026-07-07",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -692,6 +701,11 @@
       "sentence": "My coworker started malingering after the manager announced the difficult project, suddenly claiming back pain whenever assignments were distributed.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-06T13:45:55.186549+00:00"
+    },
+    "philistine": {
+      "sentence": "The art collector dismissed her neighbor as a philistine for preferring reality television to museum exhibitions and classical concerts.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-07T12:27:31.594537+00:00"
     }
   }
 }
