@@ -458,9 +458,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-08",
+      "words": [
+        "suborn"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-07",
+  "last_sent_date": "2026-07-08",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -706,6 +715,11 @@
       "sentence": "The art collector dismissed her neighbor as a philistine for preferring reality television to museum exhibitions and classical concerts.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-07T12:27:31.594537+00:00"
+    },
+    "suborn": {
+      "sentence": "The corrupt official attempted to suborn the witness into lying under oath during the trial.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-08T11:46:57.333248+00:00"
     }
   }
 }
