@@ -467,9 +467,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-10",
+      "words": [
+        "bourgeois"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-08",
+  "last_sent_date": "2026-07-10",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -720,6 +729,11 @@
       "sentence": "The corrupt official attempted to suborn the witness into lying under oath during the trial.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-08T11:46:57.333248+00:00"
+    },
+    "bourgeois": {
+      "sentence": "The bourgeois families in the suburb drove practical sedans, shopped at chain stores, and invested carefully in their children's education.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-10T12:25:40.271083+00:00"
     }
   }
 }
