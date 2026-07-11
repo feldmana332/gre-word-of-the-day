@@ -476,9 +476,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-11",
+      "words": [
+        "obsequious"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-10",
+  "last_sent_date": "2026-07-11",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -734,6 +743,11 @@
       "sentence": "The bourgeois families in the suburb drove practical sedans, shopped at chain stores, and invested carefully in their children's education.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-10T12:25:40.271083+00:00"
+    },
+    "obsequious": {
+      "sentence": "The obsequious waiter hovered nervously, anticipating every request before the customer even finished speaking.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-11T11:06:17.253063+00:00"
     }
   }
 }
