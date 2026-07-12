@@ -485,9 +485,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-12",
+      "words": [
+        "fractious"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-11",
+  "last_sent_date": "2026-07-12",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -748,6 +757,11 @@
       "sentence": "The obsequious waiter hovered nervously, anticipating every request before the customer even finished speaking.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-11T11:06:17.253063+00:00"
+    },
+    "fractious": {
+      "sentence": "The fractious toddler refused to cooperate during bedtime, throwing toys and screaming until his exhausted parents finally gave in.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-12T11:10:21.040118+00:00"
     }
   }
 }
