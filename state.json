@@ -494,9 +494,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-13",
+      "words": [
+        "jocund"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-12",
+  "last_sent_date": "2026-07-13",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -762,6 +771,11 @@
       "sentence": "The fractious toddler refused to cooperate during bedtime, throwing toys and screaming until his exhausted parents finally gave in.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-12T11:10:21.040118+00:00"
+    },
+    "jocund": {
+      "sentence": "The entire office felt jocund after hearing that everyone would receive bonuses and have Friday afternoons off.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-13T12:32:11.707433+00:00"
     }
   }
 }
