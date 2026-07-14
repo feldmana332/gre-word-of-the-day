@@ -503,9 +503,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-14",
+      "words": [
+        "equanimity"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-13",
+  "last_sent_date": "2026-07-14",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -776,6 +785,11 @@
       "sentence": "The entire office felt jocund after hearing that everyone would receive bonuses and have Friday afternoons off.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-13T12:32:11.707433+00:00"
+    },
+    "equanimity": {
+      "sentence": "Even as the house caught fire, the elderly firefighter faced the crisis with remarkable equanimity, calmly directing everyone to safety.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-14T11:25:42.725193+00:00"
     }
   }
 }
