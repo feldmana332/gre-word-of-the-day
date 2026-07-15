@@ -512,9 +512,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-15",
+      "words": [
+        "deleterious"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-14",
+  "last_sent_date": "2026-07-15",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -790,6 +799,11 @@
       "sentence": "Even as the house caught fire, the elderly firefighter faced the crisis with remarkable equanimity, calmly directing everyone to safety.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-14T11:25:42.725193+00:00"
+    },
+    "deleterious": {
+      "sentence": "The constant stress of her job had deleterious effects on her health that only became apparent years later.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-15T11:36:13.140371+00:00"
     }
   }
 }
