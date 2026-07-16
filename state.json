@@ -521,9 +521,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-16",
+      "words": [
+        "lucid"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-15",
+  "last_sent_date": "2026-07-16",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -804,6 +813,11 @@
       "sentence": "The constant stress of her job had deleterious effects on her health that only became apparent years later.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-15T11:36:13.140371+00:00"
+    },
+    "lucid": {
+      "sentence": "During her lucid dream, she realized she was sleeping and deliberately flew through a crystalline sky.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-16T11:39:51.626707+00:00"
     }
   }
 }
