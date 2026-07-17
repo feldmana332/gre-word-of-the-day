@@ -530,9 +530,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-17",
+      "words": [
+        "preternatural"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-16",
+  "last_sent_date": "2026-07-17",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -818,6 +827,11 @@
       "sentence": "During her lucid dream, she realized she was sleeping and deliberately flew through a crystalline sky.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-16T11:39:51.626707+00:00"
+    },
+    "preternatural": {
+      "sentence": "The old house had a preternatural silence that made every creak of the floorboards feel like an intrusion into something otherworldly.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-17T11:22:24.102626+00:00"
     }
   }
 }
