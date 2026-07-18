@@ -539,9 +539,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-18",
+      "words": [
+        "pundit"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-17",
+  "last_sent_date": "2026-07-18",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -832,6 +841,11 @@
       "sentence": "The old house had a preternatural silence that made every creak of the floorboards feel like an intrusion into something otherworldly.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-17T11:22:24.102626+00:00"
+    },
+    "pundit": {
+      "sentence": "Political pundits on television spent hours analyzing the election results and predicting what the outcome would mean for the nation's future.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-18T11:04:39.245229+00:00"
     }
   }
 }
