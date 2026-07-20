@@ -557,9 +557,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-20",
+      "words": [
+        "ribald"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-19",
+  "last_sent_date": "2026-07-20",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -860,6 +869,11 @@
       "sentence": "After the scandal, he became a pariah in his community and struggled to find anyone willing to befriend him.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-19T11:08:53.967407+00:00"
+    },
+    "ribald": {
+      "sentence": "The comedian's ribald jokes about bodily functions made half the audience laugh and the other half cover their ears in embarrassment.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-20T12:17:08.746953+00:00"
     }
   }
 }
