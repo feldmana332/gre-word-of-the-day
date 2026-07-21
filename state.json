@@ -566,9 +566,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-21",
+      "words": [
+        "dour"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-20",
+  "last_sent_date": "2026-07-21",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -874,6 +883,11 @@
       "sentence": "The comedian's ribald jokes about bodily functions made half the audience laugh and the other half cover their ears in embarrassment.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-20T12:17:08.746953+00:00"
+    },
+    "dour": {
+      "sentence": "The dour expression on the teacher's face made it clear that no one would be laughing during today's exam.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-21T11:46:34.056269+00:00"
     }
   }
 }
