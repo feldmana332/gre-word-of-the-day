@@ -3,7 +3,7 @@
     "af1@me.com",
     "mef332@gmail.com"
   ],
-  "default_word_count": 1,
+  "default_word_count": 2,
   "send_hour_local": 6,
   "send_window_hours": 4,
   "timezone": "America/New_York",
