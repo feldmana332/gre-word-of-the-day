@@ -485,6 +485,17 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-22",
+      "words": [
+        "stoic",
+        "oviparous"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
   "last_sent_date": "2026-07-22",
@@ -803,6 +814,16 @@
       "sentence": "Her laudable efforts to organize the community cleanup project inspired dozens of neighbors to volunteer on Saturday morning.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-22T11:47:32.592187+00:00"
+    },
+    "stoic": {
+      "sentence": "Marcus Aurelius, a devoted stoic, believed that accepting what he couldn't control brought him greater peace than struggling against fate.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-22T11:54:02.566185+00:00"
+    },
+    "oviparous": {
+      "sentence": "Most fish are oviparous, releasing thousands of eggs into the water where they develop independently without any parental care.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-22T11:54:03.450595+00:00"
     }
   }
 }
