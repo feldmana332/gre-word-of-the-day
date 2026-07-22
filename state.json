@@ -1,105 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-05-22",
-      "words": [
-        "recidivist"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "words": [
-        "wheedle"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "words": [
-        "welter"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "words": [
-        "pundit"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "words": [
-        "distend"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "words": [
-        "puissant",
-        "metamorphosis"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "words": [
-        "innocuous",
-        "levity",
-        "hyperbole"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "words": [
-        "equivocate"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "words": [
-        "dogmatic"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "words": [
-        "furtive",
-        "impinge"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "words": [
-        "sporadic",
-        "hysteresis"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "words": [
-        "gregarious",
-        "venal",
-        "monticule"
-      ],
-      "sources": [
-        "gre",
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-05-22",
-      "words": [
-        "impugn",
-        "vidame"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
       "date": "2026-05-23",
       "words": [
         "bellicose",
@@ -575,9 +476,18 @@
       "sources": [
         "gre"
       ]
+    },
+    {
+      "date": "2026-07-22",
+      "words": [
+        "laudable"
+      ],
+      "sources": [
+        "gre"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-21",
+  "last_sent_date": "2026-07-22",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -888,6 +798,11 @@
       "sentence": "The dour expression on the teacher's face made it clear that no one would be laughing during today's exam.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-21T11:46:34.056269+00:00"
+    },
+    "laudable": {
+      "sentence": "Her laudable efforts to organize the community cleanup project inspired dozens of neighbors to volunteer on Saturday morning.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-22T11:47:32.592187+00:00"
     }
   }
 }
