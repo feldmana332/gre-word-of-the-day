@@ -1,19 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-05-23",
-      "words": [
-        "bellicose",
-        "zenith",
-        "spalpeen"
-      ],
-      "sources": [
-        "gre",
-        "gre",
-        "difficult"
-      ]
-    },
-    {
       "date": "2026-05-24",
       "words": [
         "recondite",
@@ -496,9 +483,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-07-23",
+      "words": [
+        "sententious",
+        "nabob"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-22",
+  "last_sent_date": "2026-07-23",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -824,6 +822,16 @@
       "sentence": "Most fish are oviparous, releasing thousands of eggs into the water where they develop independently without any parental care.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-22T11:54:03.450595+00:00"
+    },
+    "sententious": {
+      "sentence": "The old professor's sententious remarks about life's struggles resonated deeply with every student in the lecture hall.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-23T11:50:20.901251+00:00"
+    },
+    "nabob": {
+      "sentence": "The wealthy nabob ruled his province with such lavish authority that merchants traveled from across the empire to seek his favor and trade.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-23T11:50:22.660128+00:00"
     }
   }
 }
