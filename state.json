@@ -1,17 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-05-24",
-      "words": [
-        "recondite",
-        "xeric"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
       "date": "2026-05-27",
       "words": [
         "facetious",
@@ -494,9 +483,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-07-24",
+      "words": [
+        "wistful",
+        "lacustrine"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-23",
+  "last_sent_date": "2026-07-24",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -832,6 +832,16 @@
       "sentence": "The wealthy nabob ruled his province with such lavish authority that merchants traveled from across the empire to seek his favor and trade.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-23T11:50:22.660128+00:00"
+    },
+    "wistful": {
+      "sentence": "She gazed wistfully out the window at the children playing outside, remembering her own carefree childhood summers.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-24T11:42:41.173164+00:00"
+    },
+    "lacustrine": {
+      "sentence": "The lacustrine ecosystem supports a diverse array of fish species and aquatic plants that thrive in the still freshwater environment.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-24T11:42:42.067081+00:00"
     }
   }
 }
