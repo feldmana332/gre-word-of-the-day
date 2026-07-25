@@ -494,9 +494,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-07-25",
+      "words": [
+        "munificent",
+        "triskelion"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-24",
+  "last_sent_date": "2026-07-25",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -842,6 +853,16 @@
       "sentence": "The lacustrine ecosystem supports a diverse array of fish species and aquatic plants that thrive in the still freshwater environment.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-24T11:42:42.067081+00:00"
+    },
+    "munificent": {
+      "sentence": "The munificent billionaire donated half his fortune to establish schools and hospitals across the developing nation.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-25T11:10:47.170357+00:00"
+    },
+    "triskelion": {
+      "sentence": "The ancient Celtic triskelion carved into the stone tablet represented the eternal cycle of life, death, and rebirth through its three spiraling arms.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-25T11:10:48.020969+00:00"
     }
   }
 }
