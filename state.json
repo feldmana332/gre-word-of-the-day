@@ -505,9 +505,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-07-26",
+      "words": [
+        "surreptitious",
+        "timocracy"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-25",
+  "last_sent_date": "2026-07-26",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -863,6 +874,16 @@
       "sentence": "The ancient Celtic triskelion carved into the stone tablet represented the eternal cycle of life, death, and rebirth through its three spiraling arms.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-25T11:10:48.020969+00:00"
+    },
+    "surreptitious": {
+      "sentence": "She made surreptitious glances at her phone during the meeting, checking messages when she thought no one was watching.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-26T11:19:45.032410+00:00"
+    },
+    "timocracy": {
+      "sentence": "In ancient Sparta, a rigid timocracy rewarded military valor above all else, driving young warriors to seek glory through conquest and honor in battle.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-26T11:19:46.419824+00:00"
     }
   }
 }
