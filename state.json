@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-05-28",
-      "words": [
-        "lambent"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-05-29",
       "words": [
         "chary"
@@ -514,9 +505,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-07-28",
+      "words": [
+        "tautology",
+        "vacuity"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-27",
+  "last_sent_date": "2026-07-28",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -892,6 +894,11 @@
       "sentence": "During the earthquake, paroxysmal tremors shook the building violently every few seconds, making it impossible to stand safely.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-27T12:55:17.887439+00:00"
+    },
+    "vacuity": {
+      "sentence": "The old mansion's abandoned rooms seemed to echo with a profound vacuity that made visitors feel lonely and unsettled.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-28T11:58:12.109168+00:00"
     }
   }
 }
