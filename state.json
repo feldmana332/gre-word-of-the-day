@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-05-29",
-      "words": [
-        "chary"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-05-30",
       "words": [
         "stricture"
@@ -516,9 +507,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-07-29",
+      "words": [
+        "torpid",
+        "dotage"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-28",
+  "last_sent_date": "2026-07-29",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -899,6 +901,16 @@
       "sentence": "The old mansion's abandoned rooms seemed to echo with a profound vacuity that made visitors feel lonely and unsettled.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-28T11:58:12.109168+00:00"
+    },
+    "torpid": {
+      "sentence": "The rowing team's weakest rowers were assigned to the torpid, which consistently finished last in every college race.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-29T12:01:05.380395+00:00"
+    },
+    "dotage": {
+      "sentence": "The elderly man's dotage became apparent when he repeatedly forgot his grandchildren's names and confused dates by decades.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-29T12:01:06.358730+00:00"
     }
   }
 }
