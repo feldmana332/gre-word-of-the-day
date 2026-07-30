@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-05-30",
-      "words": [
-        "stricture"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-05-31",
       "words": [
         "tortuous"
@@ -518,9 +509,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-07-30",
+      "words": [
+        "alleviate",
+        "pyrrhic"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-29",
+  "last_sent_date": "2026-07-30",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -911,6 +913,16 @@
       "sentence": "The elderly man's dotage became apparent when he repeatedly forgot his grandchildren's names and confused dates by decades.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-29T12:01:06.358730+00:00"
+    },
+    "alleviate": {
+      "sentence": "Taking a warm bath before bed can help alleviate the muscle soreness from your workout yesterday.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-30T11:52:11.948834+00:00"
+    },
+    "pyrrhic": {
+      "sentence": "The general's pyrrhic victory left his army so devastated that he could barely defend his kingdom against the next invasion.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-30T11:52:15.177932+00:00"
     }
   }
 }
