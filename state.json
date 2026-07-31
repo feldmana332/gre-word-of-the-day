@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-05-31",
-      "words": [
-        "tortuous"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-01",
       "words": [
         "debacle",
@@ -520,9 +511,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-07-31",
+      "words": [
+        "deference",
+        "sumptuary"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-30",
+  "last_sent_date": "2026-07-31",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -923,6 +925,16 @@
       "sentence": "The general's pyrrhic victory left his army so devastated that he could barely defend his kingdom against the next invasion.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-30T11:52:15.177932+00:00"
+    },
+    "deference": {
+      "sentence": "The young intern showed great deference to the senior manager by listening carefully and following all instructions without question.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-31T12:00:08.392798+00:00"
+    },
+    "sumptuary": {
+      "sentence": "The king's sumptuary laws prohibited common people from wearing silk and gold thread to maintain strict class distinctions.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-07-31T12:00:12.290642+00:00"
     }
   }
 }
