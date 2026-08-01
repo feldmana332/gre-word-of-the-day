@@ -1,19 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-01",
-      "words": [
-        "debacle",
-        "tautology",
-        "manticore"
-      ],
-      "sources": [
-        "gre",
-        "gre",
-        "difficult"
-      ]
-    },
-    {
       "date": "2026-06-03",
       "words": [
         "burgeon",
@@ -522,9 +509,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-01",
+      "words": [
+        "cacophony",
+        "withe"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-07-31",
+  "last_sent_date": "2026-08-01",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -935,6 +933,16 @@
       "sentence": "The king's sumptuary laws prohibited common people from wearing silk and gold thread to maintain strict class distinctions.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-07-31T12:00:12.290642+00:00"
+    },
+    "cacophony": {
+      "sentence": "The cacophony of honking horns, barking dogs, and construction noise made it impossible to concentrate at my desk near the window.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-01T11:16:38.138294+00:00"
+    },
+    "withe": {
+      "sentence": "The gardener twisted a withe of willow around the wooden fence posts to hold them firmly in place.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-01T11:16:39.028189+00:00"
     }
   }
 }
