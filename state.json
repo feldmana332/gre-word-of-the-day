@@ -520,9 +520,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-02",
+      "words": [
+        "bucolic",
+        "fenestration"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-01",
+  "last_sent_date": "2026-08-02",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -943,6 +954,16 @@
       "sentence": "The gardener twisted a withe of willow around the wooden fence posts to hold them firmly in place.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-01T11:16:39.028189+00:00"
+    },
+    "bucolic": {
+      "sentence": "The painter captured the bucolic charm of rolling meadows and grazing sheep in her peaceful landscape.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-02T11:16:34.644836+00:00"
+    },
+    "fenestration": {
+      "sentence": "The modern office building's generous fenestration allows natural light to flood every workspace throughout the day.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-02T11:16:35.343225+00:00"
     }
   }
 }
