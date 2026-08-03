@@ -1,17 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-03",
-      "words": [
-        "burgeon",
-        "furibund"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
       "date": "2026-06-04",
       "words": [
         "desultory"
@@ -531,9 +520,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-03",
+      "words": [
+        "encomium",
+        "obsidian"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-02",
+  "last_sent_date": "2026-08-03",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -964,6 +964,16 @@
       "sentence": "The modern office building's generous fenestration allows natural light to flood every workspace throughout the day.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-02T11:16:35.343225+00:00"
+    },
+    "encomium": {
+      "sentence": "The retiring professor received an encomium from her colleagues, praising her decades of dedication to transforming students' lives through passionate teaching.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-03T12:55:03.762219+00:00"
+    },
+    "obsidian": {
+      "sentence": "The ancient warriors crafted sharp arrowheads from obsidian, the gleaming black volcanic glass that formed from cooling lava.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-03T12:55:05.491138+00:00"
     }
   }
 }
