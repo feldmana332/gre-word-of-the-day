@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-04",
-      "words": [
-        "desultory"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-05",
       "words": [
         "mellifluous"
@@ -531,9 +522,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-04",
+      "words": [
+        "exuberant",
+        "schadenfreude"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-03",
+  "last_sent_date": "2026-08-04",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -974,6 +976,16 @@
       "sentence": "The ancient warriors crafted sharp arrowheads from obsidian, the gleaming black volcanic glass that formed from cooling lava.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-03T12:55:05.491138+00:00"
+    },
+    "exuberant": {
+      "sentence": "The team's exuberant celebration after winning the championship lasted well into the night, with players jumping and cheering uncontrollably.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-04T12:02:07.874660+00:00"
+    },
+    "schadenfreude": {
+      "sentence": "When my rival tripped on stage during the presentation, I felt a rush of schadenfreude before catching myself and offering to help him up.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-04T12:02:08.951232+00:00"
     }
   }
 }
