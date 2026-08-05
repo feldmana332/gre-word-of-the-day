@@ -1,26 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-05",
-      "words": [
-        "mellifluous"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-06-05",
-      "words": [
-        "surfeit",
-        "contemn"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
       "date": "2026-06-06",
       "words": [
         "penurious"
@@ -533,9 +513,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-05",
+      "words": [
+        "tirade",
+        "saltatory"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-04",
+  "last_sent_date": "2026-08-05",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -986,6 +977,16 @@
       "sentence": "When my rival tripped on stage during the presentation, I felt a rush of schadenfreude before catching myself and offering to help him up.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-04T12:02:08.951232+00:00"
+    },
+    "tirade": {
+      "sentence": "After losing the game, the coach launched into a furious tirade about the team's lazy defense and lack of effort.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-05T11:59:46.338462+00:00"
+    },
+    "saltatory": {
+      "sentence": "The saltatory evolution of the species showed sudden leaps in development rather than gradual, continuous change over millions of years.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-05T11:59:47.329366+00:00"
     }
   }
 }
