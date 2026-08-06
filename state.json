@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-06",
-      "words": [
-        "penurious"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-07",
       "words": [
         "penchant"
@@ -524,9 +515,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-06",
+      "words": [
+        "ingenuous",
+        "deglutition"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-05",
+  "last_sent_date": "2026-08-06",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -987,6 +989,16 @@
       "sentence": "The saltatory evolution of the species showed sudden leaps in development rather than gradual, continuous change over millions of years.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-05T11:59:47.329366+00:00"
+    },
+    "ingenuous": {
+      "sentence": "The ingenuous teenager believed everything the smooth-talking salesman promised, never questioning his obviously suspicious claims.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-06T12:02:34.375238+00:00"
+    },
+    "deglutition": {
+      "sentence": "The patient's difficulty with deglutition after the surgery made it necessary to consume only liquid foods for several weeks.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-06T12:02:35.449457+00:00"
     }
   }
 }
