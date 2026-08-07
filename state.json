@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-07",
-      "words": [
-        "penchant"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-09",
       "words": [
         "prevaricate"
@@ -526,9 +517,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-07",
+      "words": [
+        "enmity",
+        "limicoline"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-06",
+  "last_sent_date": "2026-08-07",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -999,6 +1001,16 @@
       "sentence": "The patient's difficulty with deglutition after the surgery made it necessary to consume only liquid foods for several weeks.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-06T12:02:35.449457+00:00"
+    },
+    "enmity": {
+      "sentence": "After years of bitter disputes over land, deep enmity festered between the two neighboring families.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-07T10:52:30.898812+00:00"
+    },
+    "limicoline": {
+      "sentence": "The limicoline birds waded through the muddy marshlands at dawn, searching for insects and small organisms buried in the soft sediment.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-07T10:52:31.873327+00:00"
     }
   }
 }
