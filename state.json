@@ -528,9 +528,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-08",
+      "words": [
+        "innocuous",
+        "tricorn"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-07",
+  "last_sent_date": "2026-08-08",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1011,6 +1022,16 @@
       "sentence": "The limicoline birds waded through the muddy marshlands at dawn, searching for insects and small organisms buried in the soft sediment.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-07T10:52:31.873327+00:00"
+    },
+    "innocuous": {
+      "sentence": "The joke seemed innocuous at first, but it gradually offended everyone in the room.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-08T10:33:45.728940+00:00"
+    },
+    "tricorn": {
+      "sentence": "The Revolutionary War soldier adjusted his tricorn hat as he marched across the frozen battlefield.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-08T10:33:47.798354+00:00"
     }
   }
 }
