@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-10",
-      "words": [
-        "parsimonious"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-12",
       "words": [
         "approbation"
@@ -541,9 +532,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-10",
+      "words": [
+        "disingenuous",
+        "steatopygia"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-09",
+  "last_sent_date": "2026-08-10",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1044,6 +1046,16 @@
       "sentence": "The novel follows a roguish protagonist through a picaresque journey across medieval Spain, filled with adventures and misadventures among the common people.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-09T10:35:00.824483+00:00"
+    },
+    "disingenuous": {
+      "sentence": "His apology seemed disingenuous when he smiled while claiming he felt terrible about hurting her feelings.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-10T11:08:43.939135+00:00"
+    },
+    "steatopygia": {
+      "sentence": "The genetic trait of steatopygia is more common in certain African populations and has fascinated anthropologists for centuries.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-10T11:08:45.920981+00:00"
     }
   }
 }
