@@ -543,9 +543,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-11",
+      "words": [
+        "invidious",
+        "heliotrope"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-10",
+  "last_sent_date": "2026-08-11",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1056,6 +1067,16 @@
       "sentence": "The genetic trait of steatopygia is more common in certain African populations and has fascinated anthropologists for centuries.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-10T11:08:45.920981+00:00"
+    },
+    "invidious": {
+      "sentence": "Making an invidious comparison between the two employees' work performance created tension and resentment throughout the entire department.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-11T10:50:29.886300+00:00"
+    },
+    "heliotrope": {
+      "sentence": "The heliotrope in our garden slowly rotated throughout the day, always keeping its delicate purple flowers pointed directly toward the sun.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-11T10:50:31.633591+00:00"
     }
   }
 }
