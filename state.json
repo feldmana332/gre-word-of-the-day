@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-12",
-      "words": [
-        "approbation"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-13",
       "words": [
         "indefatigable"
@@ -554,9 +545,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-12",
+      "words": [
+        "puerile",
+        "vulgarian"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-11",
+  "last_sent_date": "2026-08-12",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1077,6 +1079,16 @@
       "sentence": "The heliotrope in our garden slowly rotated throughout the day, always keeping its delicate purple flowers pointed directly toward the sun.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-11T10:50:31.633591+00:00"
+    },
+    "puerile": {
+      "sentence": "The adult's puerile jokes about bathroom humor made everyone at the dinner party groan and roll their eyes.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-12T11:00:13.906400+00:00"
+    },
+    "vulgarian": {
+      "sentence": "The vulgarian at the dinner party loudly interrupted everyone and told crude jokes while chewing with his mouth open.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-12T11:00:14.929242+00:00"
     }
   }
 }
