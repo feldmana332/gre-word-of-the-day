@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-13",
-      "words": [
-        "indefatigable"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-14",
       "words": [
         "calumny"
@@ -556,9 +547,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-13",
+      "words": [
+        "servile",
+        "xebec"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-12",
+  "last_sent_date": "2026-08-13",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1089,6 +1091,16 @@
       "sentence": "The vulgarian at the dinner party loudly interrupted everyone and told crude jokes while chewing with his mouth open.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-12T11:00:14.929242+00:00"
+    },
+    "servile": {
+      "sentence": "The dictator surrounded himself with servile officials who never questioned his orders and eagerly obeyed his every command.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-13T11:00:47.253487+00:00"
+    },
+    "xebec": {
+      "sentence": "The merchant captain steered his swift xebec through the narrow strait, its distinctive overhanging bow cutting elegantly through the Mediterranean waves.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-13T11:00:48.298294+00:00"
     }
   }
 }
