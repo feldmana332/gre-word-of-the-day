@@ -560,9 +560,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-15",
+      "words": [
+        "nascent",
+        "pleonasm"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-14",
+  "last_sent_date": "2026-08-15",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1113,6 +1124,16 @@
       "sentence": "After her divorce, she turned to wine as a nepenthe, hoping each glass would dull the ache of her shattered marriage.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-14T10:57:44.252452+00:00"
+    },
+    "nascent": {
+      "sentence": "The nascent startup struggled to secure funding, but the founders remained optimistic about their innovative technology's potential.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-15T10:23:13.846184+00:00"
+    },
+    "pleonasm": {
+      "sentence": "The phrase \"free gift\" is a common pleonasm since a gift is inherently free.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-15T10:23:14.521913+00:00"
     }
   }
 }
