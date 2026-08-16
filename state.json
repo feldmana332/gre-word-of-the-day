@@ -571,9 +571,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-16",
+      "words": [
+        "mellifluous",
+        "quisling"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-15",
+  "last_sent_date": "2026-08-16",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1134,6 +1145,11 @@
       "sentence": "The phrase \"free gift\" is a common pleonasm since a gift is inherently free.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-15T10:23:14.521913+00:00"
+    },
+    "quisling": {
+      "sentence": "The general was branded a quisling after he secretly negotiated surrender terms with the invading forces.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-16T10:23:32.649581+00:00"
     }
   }
 }
