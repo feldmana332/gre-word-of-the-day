@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-17",
-      "words": [
-        "lugubrious"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-18",
       "words": [
         "fortuitous"
@@ -582,9 +573,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-17",
+      "words": [
+        "ostentatious",
+        "cavalcade"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-16",
+  "last_sent_date": "2026-08-17",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1150,6 +1152,16 @@
       "sentence": "The general was branded a quisling after he secretly negotiated surrender terms with the invading forces.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-16T10:23:32.649581+00:00"
+    },
+    "ostentatious": {
+      "sentence": "The billionaire's ostentatious mansion with its golden gates and marble fountains made the neighbors uncomfortable.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-17T10:32:07.964171+00:00"
+    },
+    "cavalcade": {
+      "sentence": "The royal cavalcade of mounted knights rode through the village streets, their armor gleaming in the morning sunlight.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-17T10:32:09.256385+00:00"
     }
   }
 }
