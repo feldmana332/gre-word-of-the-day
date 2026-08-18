@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-18",
-      "words": [
-        "fortuitous"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-19",
       "words": [
         "flippant"
@@ -584,9 +575,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-18",
+      "words": [
+        "contumacious",
+        "synoecism"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-17",
+  "last_sent_date": "2026-08-18",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1162,6 +1164,16 @@
       "sentence": "The royal cavalcade of mounted knights rode through the village streets, their armor gleaming in the morning sunlight.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-17T10:32:09.256385+00:00"
+    },
+    "contumacious": {
+      "sentence": "The contumacious employee repeatedly ignored company policies and refused to follow any directives from management.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-18T10:28:14.145953+00:00"
+    },
+    "synoecism": {
+      "sentence": "The ancient Greek city-states gradually underwent synoecism, merging their separate communities into unified urban centers under single governments.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-18T10:28:15.083373+00:00"
     }
   }
 }
