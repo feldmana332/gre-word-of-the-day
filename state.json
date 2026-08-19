@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-19",
-      "words": [
-        "flippant"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-20",
       "words": [
         "commensurate"
@@ -586,9 +577,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-19",
+      "words": [
+        "plethora",
+        "fianchetto"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-18",
+  "last_sent_date": "2026-08-19",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1174,6 +1176,16 @@
       "sentence": "The ancient Greek city-states gradually underwent synoecism, merging their separate communities into unified urban centers under single governments.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-18T10:28:15.083373+00:00"
+    },
+    "plethora": {
+      "sentence": "The new restaurant offers a plethora of desserts, from chocolate cakes to fruit tarts to ice cream sundaes.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-19T10:29:16.362635+00:00"
+    },
+    "fianchetto": {
+      "sentence": "The grandmaster opened with a fianchetto, positioning her bishop on the long diagonal to control the center from an unconventional angle.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-19T10:29:17.405972+00:00"
     }
   }
 }
