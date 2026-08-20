@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-20",
-      "words": [
-        "commensurate"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-21",
       "words": [
         "disabuse"
@@ -588,9 +579,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-20",
+      "words": [
+        "nonplussed",
+        "maieutic"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-19",
+  "last_sent_date": "2026-08-20",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1186,6 +1188,16 @@
       "sentence": "The grandmaster opened with a fianchetto, positioning her bishop on the long diagonal to control the center from an unconventional angle.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-19T10:29:17.405972+00:00"
+    },
+    "nonplussed": {
+      "sentence": "The magician's unexpected trick left the audience completely nonplussed, unable to figure out how he'd made the elephant disappear.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-20T10:30:39.432370+00:00"
+    },
+    "maieutic": {
+      "sentence": "The teacher's maieutic approach helped students discover their own answers rather than simply receiving information from the lecturer.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-20T10:30:40.429581+00:00"
     }
   }
 }
