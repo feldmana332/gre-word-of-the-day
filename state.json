@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-21",
-      "words": [
-        "disabuse"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-23",
       "words": [
         "cantankerous"
@@ -590,9 +581,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-21",
+      "words": [
+        "grandiloquent",
+        "sybaritic"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-20",
+  "last_sent_date": "2026-08-21",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1198,6 +1200,16 @@
       "sentence": "The teacher's maieutic approach helped students discover their own answers rather than simply receiving information from the lecturer.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-20T10:30:40.429581+00:00"
+    },
+    "grandiloquent": {
+      "sentence": "The politician's grandiloquent speech about destiny and triumph left most voters confused about his actual policy positions.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-21T10:30:49.646081+00:00"
+    },
+    "sybaritic": {
+      "sentence": "After years of camping trips, she finally gave in to her sybaritic desires and booked a luxury resort with heated pools and daily massages.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-21T10:30:50.454460+00:00"
     }
   }
 }
