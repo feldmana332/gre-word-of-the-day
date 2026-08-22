@@ -592,9 +592,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-22",
+      "words": [
+        "lassitude",
+        "eidolon"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-21",
+  "last_sent_date": "2026-08-22",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1210,6 +1221,16 @@
       "sentence": "After years of camping trips, she finally gave in to her sybaritic desires and booked a luxury resort with heated pools and daily massages.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-21T10:30:50.454460+00:00"
+    },
+    "lassitude": {
+      "sentence": "After hiking ten miles in the summer heat, Maria felt such overwhelming lassitude that she collapsed on the couch for the rest of the afternoon.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-22T10:23:33.703906+00:00"
+    },
+    "eidolon": {
+      "sentence": "The old photograph showed only an eidolon of the man he once was, a ghostly shadow faded by time and loss.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-22T10:23:34.646879+00:00"
     }
   }
 }
