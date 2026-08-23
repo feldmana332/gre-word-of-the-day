@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-23",
-      "words": [
-        "cantankerous"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-24",
       "words": [
         "obtuse"
@@ -603,9 +594,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-23",
+      "words": [
+        "resplendent",
+        "allochthonous"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-22",
+  "last_sent_date": "2026-08-23",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1231,6 +1233,16 @@
       "sentence": "The old photograph showed only an eidolon of the man he once was, a ghostly shadow faded by time and loss.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-22T10:23:34.646879+00:00"
+    },
+    "resplendent": {
+      "sentence": "The peacock displayed its resplendent feathers, each one shimmering with brilliant blues, greens, and golds that caught the afternoon sunlight.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-23T10:24:12.004504+00:00"
+    },
+    "allochthonous": {
+      "sentence": "The geologist discovered that the allochthonous rock formation had been transported hundreds of miles from its original location by ancient tectonic forces.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-23T10:24:12.832137+00:00"
     }
   }
 }
