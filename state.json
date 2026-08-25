@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-25",
-      "words": [
-        "verdant"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-26",
       "words": [
         "paucity"
@@ -607,9 +598,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-25",
+      "words": [
+        "amenable",
+        "tabescent"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-24",
+  "last_sent_date": "2026-08-25",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1250,6 +1252,16 @@
       "sentence": "The dance instructor served as fugleman, executing each movement precisely so the nervous beginners could follow along without confusion.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-24T10:37:11.066659+00:00"
+    },
+    "amenable": {
+      "sentence": "The city council proved amenable to the neighborhood's proposal for a new community garden after residents presented their detailed plans.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-25T10:33:20.781803+00:00"
+    },
+    "tabescent": {
+      "sentence": "The tabescent patient wasted away in the hospital bed, growing visibly thinner each passing week.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-25T10:33:21.719635+00:00"
     }
   }
 }
