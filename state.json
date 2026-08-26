@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-26",
-      "words": [
-        "paucity"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-06-27",
       "words": [
         "unctuous"
@@ -609,9 +600,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-08-26",
+      "words": [
+        "magnanimous",
+        "tegmen"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-25",
+  "last_sent_date": "2026-08-26",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1262,6 +1264,16 @@
       "sentence": "The tabescent patient wasted away in the hospital bed, growing visibly thinner each passing week.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-25T10:33:21.719635+00:00"
+    },
+    "magnanimous": {
+      "sentence": "After winning the debate tournament, the magnanimous champion publicly praised her opponent's excellent arguments instead of gloating.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-26T10:35:35.945838+00:00"
+    },
+    "tegmen": {
+      "sentence": "The beetle's hard tegmen, or protective covering, gleamed iridescent green under the microscope's bright light.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-08-26T10:35:36.758125+00:00"
     }
   }
 }
