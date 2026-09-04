@@ -1,78 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-06-27",
-      "words": [
-        "unctuous"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-06-28",
-      "words": [
-        "truncate"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-06-30",
-      "words": [
-        "pithy"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-01",
-      "words": [
-        "vacuous"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-02",
-      "words": [
-        "conciliatory"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-03",
-      "words": [
-        "trepidation"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-04",
-      "words": [
-        "panacea"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-05",
-      "words": [
-        "vitiate"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-07-06",
       "words": [
         "malinger"
@@ -611,9 +539,22 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-09-04",
+      "words": [
+        "harangue",
+        "palliate",
+        "nonpareil"
+      ],
+      "sources": [
+        "gre",
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-08-26",
+  "last_sent_date": "2026-09-04",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1274,6 +1215,21 @@
       "sentence": "The beetle's hard tegmen, or protective covering, gleamed iridescent green under the microscope's bright light.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-08-26T10:35:36.758125+00:00"
+    },
+    "harangue": {
+      "sentence": "The angry coach launched into a lengthy harangue about the team's terrible defensive performance during halftime.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-09-04T21:57:51.984392+00:00"
+    },
+    "palliate": {
+      "sentence": "The medication helps palliate her chronic pain, though it doesn't cure the underlying condition.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-09-04T21:57:53.287399+00:00"
+    },
+    "nonpareil": {
+      "sentence": "Her violin performance was absolutely nonpareil, leaving the entire audience speechless and convinced they had witnessed something truly unmatched.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-09-04T21:57:54.249687+00:00"
     }
   }
 }
