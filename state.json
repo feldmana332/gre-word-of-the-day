@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-07-06",
-      "words": [
-        "malinger"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-07-07",
       "words": [
         "philistine"
@@ -552,9 +543,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-09-05",
+      "words": [
+        "expatiate",
+        "syzygy"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-09-04",
+  "last_sent_date": "2026-09-05",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1230,6 +1232,16 @@
       "sentence": "Her violin performance was absolutely nonpareil, leaving the entire audience speechless and convinced they had witnessed something truly unmatched.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-09-04T21:57:54.249687+00:00"
+    },
+    "expatiate": {
+      "sentence": "The professor began to expatiate on the history of ancient Rome, elaborating with such enthusiasm that the lecture extended well beyond its scheduled time.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-09-05T13:17:05.928518+00:00"
+    },
+    "syzygy": {
+      "sentence": "During the lunar syzygy, the sun, earth, and moon aligned perfectly, creating an extraordinary eclipse visible across the entire continent.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-09-05T13:17:06.913955+00:00"
     }
   }
 }
