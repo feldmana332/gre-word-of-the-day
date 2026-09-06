@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-07-07",
-      "words": [
-        "philistine"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-07-08",
       "words": [
         "suborn"
@@ -554,9 +545,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-09-06",
+      "words": [
+        "bombastic",
+        "interstitial"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-09-05",
+  "last_sent_date": "2026-09-06",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1242,6 +1244,16 @@
       "sentence": "During the lunar syzygy, the sun, earth, and moon aligned perfectly, creating an extraordinary eclipse visible across the entire continent.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-09-05T13:17:06.913955+00:00"
+    },
+    "bombastic": {
+      "sentence": "The politician's bombastic speech about single-handedly saving the nation made even his supporters roll their eyes at the obvious exaggeration.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-09-06T13:26:38.025350+00:00"
+    },
+    "interstitial": {
+      "sentence": "The interstitial spaces between the building's brick walls allowed moisture to seep through, causing damage to the interior plaster.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-09-06T13:26:39.402058+00:00"
     }
   }
 }
