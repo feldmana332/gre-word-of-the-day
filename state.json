@@ -1,51 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-07-08",
-      "words": [
-        "suborn"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-10",
-      "words": [
-        "bourgeois"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-11",
-      "words": [
-        "obsequious"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-12",
-      "words": [
-        "fractious"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-13",
-      "words": [
-        "jocund"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-07-14",
       "words": [
         "equanimity"
@@ -556,9 +511,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-09-12",
+      "words": [
+        "machination",
+        "perdition"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-09-06",
+  "last_sent_date": "2026-09-12",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1254,6 +1220,16 @@
       "sentence": "The interstitial spaces between the building's brick walls allowed moisture to seep through, causing damage to the interior plaster.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-09-06T13:26:39.402058+00:00"
+    },
+    "machination": {
+      "sentence": "The corrupt official's machinations to steal public funds were finally exposed by the investigative journalists.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-09-12T13:23:20.664973+00:00"
+    },
+    "perdition": {
+      "sentence": "The captain steered the ship away from the rocks, narrowly escaping perdition in the treacherous storm.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-09-12T13:23:21.346109+00:00"
     }
   }
 }
