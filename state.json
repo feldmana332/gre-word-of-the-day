@@ -1,69 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-07-14",
-      "words": [
-        "equanimity"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-15",
-      "words": [
-        "deleterious"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-16",
-      "words": [
-        "lucid"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-17",
-      "words": [
-        "preternatural"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-18",
-      "words": [
-        "pundit"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-19",
-      "words": [
-        "pariah"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-20",
-      "words": [
-        "ribald"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-07-21",
       "words": [
         "dour"
@@ -522,9 +459,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-09-19",
+      "words": [
+        "protean",
+        "demulcent"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-09-12",
+  "last_sent_date": "2026-09-19",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1230,6 +1178,16 @@
       "sentence": "The captain steered the ship away from the rocks, narrowly escaping perdition in the treacherous storm.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-09-12T13:23:21.346109+00:00"
+    },
+    "protean": {
+      "sentence": "The actor's protean talent allowed her to convincingly portray everything from a hardened detective to a whimsical fairy godmother.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-09-19T13:43:47.260981+00:00"
+    },
+    "demulcent": {
+      "sentence": "The warm honey acted as a demulcent, soothing my irritated throat and making the cough finally subside.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-09-19T13:43:48.086993+00:00"
     }
   }
 }
