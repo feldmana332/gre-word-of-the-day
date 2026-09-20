@@ -1,15 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-07-21",
-      "words": [
-        "dour"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
       "date": "2026-07-22",
       "words": [
         "laudable"
@@ -470,9 +461,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-09-20",
+      "words": [
+        "quiescent",
+        "sigmoid"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-09-19",
+  "last_sent_date": "2026-09-20",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1188,6 +1190,11 @@
       "sentence": "The warm honey acted as a demulcent, soothing my irritated throat and making the cough finally subside.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-09-19T13:43:48.086993+00:00"
+    },
+    "sigmoid": {
+      "sentence": "The sigmoid curve on the graph showed how the population growth gradually plateaued as resources became scarce.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-09-20T13:59:21.973562+00:00"
     }
   }
 }
