@@ -1,312 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-07-22",
-      "words": [
-        "laudable"
-      ],
-      "sources": [
-        "gre"
-      ]
-    },
-    {
-      "date": "2026-07-22",
-      "words": [
-        "stoic",
-        "oviparous"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-07-23",
-      "words": [
-        "sententious",
-        "nabob"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-07-24",
-      "words": [
-        "wistful",
-        "lacustrine"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-07-25",
-      "words": [
-        "munificent",
-        "triskelion"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-07-26",
-      "words": [
-        "surreptitious",
-        "timocracy"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-07-27",
-      "words": [
-        "quiescent",
-        "paroxysmal"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-07-28",
-      "words": [
-        "tautology",
-        "vacuity"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-07-29",
-      "words": [
-        "torpid",
-        "dotage"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-07-30",
-      "words": [
-        "alleviate",
-        "pyrrhic"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-07-31",
-      "words": [
-        "deference",
-        "sumptuary"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-01",
-      "words": [
-        "cacophony",
-        "withe"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-02",
-      "words": [
-        "bucolic",
-        "fenestration"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-03",
-      "words": [
-        "encomium",
-        "obsidian"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-04",
-      "words": [
-        "exuberant",
-        "schadenfreude"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-05",
-      "words": [
-        "tirade",
-        "saltatory"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-06",
-      "words": [
-        "ingenuous",
-        "deglutition"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-07",
-      "words": [
-        "enmity",
-        "limicoline"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-08",
-      "words": [
-        "innocuous",
-        "tricorn"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-09",
-      "words": [
-        "pungent",
-        "picaresque"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-10",
-      "words": [
-        "disingenuous",
-        "steatopygia"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-11",
-      "words": [
-        "invidious",
-        "heliotrope"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-12",
-      "words": [
-        "puerile",
-        "vulgarian"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-13",
-      "words": [
-        "servile",
-        "xebec"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-14",
-      "words": [
-        "ennui",
-        "nepenthe"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-15",
-      "words": [
-        "nascent",
-        "pleonasm"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-16",
-      "words": [
-        "mellifluous",
-        "quisling"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-17",
-      "words": [
-        "ostentatious",
-        "cavalcade"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
       "date": "2026-08-18",
       "words": [
         "contumacious",
@@ -472,9 +166,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-10-17",
+      "words": [
+        "equanimity",
+        "sirenian"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-09-20",
+  "last_sent_date": "2026-10-17",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -1195,6 +900,11 @@
       "sentence": "The sigmoid curve on the graph showed how the population growth gradually plateaued as resources became scarce.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-09-20T13:59:21.973562+00:00"
+    },
+    "sirenian": {
+      "sentence": "The manatee, a large sirenian mammal, slowly grazed on aquatic plants in the shallow Florida river.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-10-17T13:29:41.625832+00:00"
     }
   }
 }
