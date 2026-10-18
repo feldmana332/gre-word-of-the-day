@@ -1,17 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-08-18",
-      "words": [
-        "contumacious",
-        "synoecism"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
       "date": "2026-08-19",
       "words": [
         "plethora",
@@ -177,9 +166,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-10-18",
+      "words": [
+        "paucity",
+        "pasquinade"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-10-17",
+  "last_sent_date": "2026-10-18",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -905,6 +905,11 @@
       "sentence": "The manatee, a large sirenian mammal, slowly grazed on aquatic plants in the shallow Florida river.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-10-17T13:29:41.625832+00:00"
+    },
+    "pasquinade": {
+      "sentence": "The anonymous pasquinade posted on the office bulletin board mocked the CEO's terrible decisions with biting humor and clever wordplay.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-10-18T13:47:26.060763+00:00"
     }
   }
 }
