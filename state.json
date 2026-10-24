@@ -1,72 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-08-19",
-      "words": [
-        "plethora",
-        "fianchetto"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-20",
-      "words": [
-        "nonplussed",
-        "maieutic"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-21",
-      "words": [
-        "grandiloquent",
-        "sybaritic"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-22",
-      "words": [
-        "lassitude",
-        "eidolon"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-23",
-      "words": [
-        "resplendent",
-        "allochthonous"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
-      "date": "2026-08-24",
-      "words": [
-        "truncate",
-        "fugleman"
-      ],
-      "sources": [
-        "gre",
-        "difficult"
-      ]
-    },
-    {
       "date": "2026-08-25",
       "words": [
         "amenable",
@@ -177,9 +111,20 @@
         "gre",
         "difficult"
       ]
+    },
+    {
+      "date": "2026-10-24",
+      "words": [
+        "immutable",
+        "quaquaversal"
+      ],
+      "sources": [
+        "gre",
+        "difficult"
+      ]
     }
   ],
-  "last_sent_date": "2026-10-18",
+  "last_sent_date": "2026-10-24",
   "examples": {
     "impugn": {
       "sentence": "The investigator's findings impugn the defendant's alibi, casting serious doubt on his claim of innocence.",
@@ -910,6 +855,16 @@
       "sentence": "The anonymous pasquinade posted on the office bulletin board mocked the CEO's terrible decisions with biting humor and clever wordplay.",
       "model": "claude-haiku-4-5",
       "generated_at": "2026-10-18T13:47:26.060763+00:00"
+    },
+    "immutable": {
+      "sentence": "The laws of physics are immutable, so no matter how hard you try, you cannot violate them.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-10-24T13:51:39.089873+00:00"
+    },
+    "quaquaversal": {
+      "sentence": "The old well at the town center was quaquaversal in design, with pathways radiating outward in every direction to accommodate visitors from all sides.",
+      "model": "claude-haiku-4-5",
+      "generated_at": "2026-10-24T13:51:40.002677+00:00"
     }
   }
 }
